@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
     "lib/zype-cli/collection.rb",
     "lib/zype-cli/configuration.rb",
     "lib/zype-cli/model.rb",    
+    "lib/zype-cli/models/video.rb",
+    "lib/zype-cli/models/videos.rb",
     "lib/zype-cli/models/zobject_schema.rb",
     "lib/zype-cli/models/zobject_schemas.rb",
     "lib/zype-cli/models/zobject.rb",

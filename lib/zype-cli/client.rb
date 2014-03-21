@@ -77,14 +77,18 @@ module ZypeCli
       end
     end
     
+    
     model_path 'zype-cli/models'
     
+    model :video
     model :zobject_schema
     model :zobject
     
+    collection :videos
     collection :zobject_schemas
     collection :zobjects
     
+ 
     def get(path,params={})
       raise NoApiKey if ZypeCli.configuration.api_key.to_s.empty?
       
