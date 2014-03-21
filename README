@@ -1,0 +1,33 @@
+Zype-CLI
+
+== How to install
+
+1. Build gem
+
+gem build zype-cli.gemspec 
+
+2. Install gem
+
+gem install ./zype-cli-0.0.0.gem
+
+== How to use
+
+1. Open irb
+
+irb
+
+2. Require gem
+
+require 'zype-cli'
+
+3. Add API key
+
+ZypeCli::Client.api_key = 'd8qrBvLrO4vzdJ2Rav4BdA'
+
+4. Create a client
+
+ZypeCli::Client.new
+
+3. Query zobjects
+
+client.zobjects.all(zobject: 'team')
