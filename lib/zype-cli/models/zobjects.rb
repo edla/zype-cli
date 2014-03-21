@@ -6,7 +6,7 @@ module ZypeCli
       load(service.get('/zobjects', zobject: zobject, filters: filters))
     end
     
-    def get(zobject, id)
+    def find(zobject, id)
       load(service.get("/zobjects/#{id}", zobject: zobject))
     end
   end

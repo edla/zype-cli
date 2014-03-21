@@ -3,7 +3,18 @@ require 'net/https'
 module ZypeCli
   class Client
 
-    class NoToken < StandardError; end
+    class NoApiKey < StandardError; end
+    class NotFound < StandardError; end
+    class ServerError < StandardError; end    
+    class ImATeapot < StandardError; end
+    class Unauthorized < StandardError; end
+    
+    ERROR_TYPES = {
+      '401' => Unauthorized,
+      '404' => NotFound,
+      '418' => ImATeapot,
+      '500' => ServerError
+    }.freeze
 
     class << self
       attr_writer :use_ssl, :api_key, :host, :port
@@ -39,7 +50,6 @@ module ZypeCli
             require [@model_path, model].join('/')
           end
           for collection in collections
-            puts collection
             require [@model_path, collection].join('/')
             constant = collection.to_s.split('_').map {|characters| characters[0...1].upcase << characters[1..-1]}.join('')
             ZypeCli::Client.class_eval <<-EOS, __FILE__, __LINE__
@@ -94,7 +104,7 @@ module ZypeCli
     collection :zobjects
     
     def get(path,params={})
-      raise NoToken if Client.api_key.to_s.empty?
+      raise NoApiKey if Client.api_key.to_s.empty?
       
       params.merge!('api_key' => Client.api_key)
       
@@ -107,19 +117,25 @@ module ZypeCli
 
       response = http.start {|h| h.request(request)}
 
-      if response.code == '200'
-        handle_response(response)
-      else
-        
-      end
+      handle_response(response)
     end
   
     def handle_response(response)
-      if response.body.to_s.empty?
-        {}    
+      json = MultiJson.decode(response.body)
+    
+      if response.code == '200'
+        success!(response.code,json)
       else
-        MultiJson.decode(response.body)
-      end
+        error!(response.code,json)
+      end        
+    end
+  
+    def success!(status, response)
+      response
+    end
+    
+    def error!(status,response)
+      raise ERROR_TYPES[status].new(response['message'])
     end
   end
 end
