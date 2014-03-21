@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
     "lib/zype-cli.rb",
     "lib/zype-cli/client.rb",
     "lib/zype-cli/collection.rb",
+    "lib/zype-cli/configuration.rb",
     "lib/zype-cli/model.rb",    
     "lib/zype-cli/models/zobject_schema.rb",
     "lib/zype-cli/models/zobject_schemas.rb",

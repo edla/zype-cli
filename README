@@ -20,9 +20,17 @@ irb
 
 require 'zype-cli'
 
-3. Add API key
+3. Configure gem
 
-ZypeCli::Client.api_key = 'd8qrBvLrO4vzdJ2Rav4BdA'
+# For a rails application add the following under:
+# config/initializers/zype-cli.rb
+
+ZypeCli.configure do |config| 
+  config.api_key = [your api key]
+  config.host    = [host] # default: api.zype-core.com
+  config.port    = [port] # default: 3000
+  config.use_ssl = false  # default: false
+end
 
 4. Create a client
 

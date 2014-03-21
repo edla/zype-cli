@@ -17,24 +17,6 @@ module ZypeCli
     }.freeze
 
     class << self
-      attr_writer :use_ssl, :api_key, :host, :port
-
-      def use_ssl
-        @use_ssl || false
-      end
-      
-      def host
-        @host || 'api.zype-core.com'
-      end
-      
-      def port
-        @port || 3000
-      end
-      
-      def api_key
-        @api_key
-      end
-      
       alias_method :old_new, :new
 
       def new(options={})
@@ -104,16 +86,16 @@ module ZypeCli
     collection :zobjects
     
     def get(path,params={})
-      raise NoApiKey if Client.api_key.to_s.empty?
+      raise NoApiKey if ZypeCli.configuration.api_key.to_s.empty?
       
-      params.merge!('api_key' => Client.api_key)
+      params.merge!('api_key' => ZypeCli.configuration.api_key)
       
       request = Net::HTTP::Get.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
 
-      http = Net::HTTP.new(Client.host, Client.port)
-      http.use_ssl = Client.use_ssl
+      http = Net::HTTP.new(ZypeCli.configuration.host, ZypeCli.configuration.port)
+      http.use_ssl = ZypeCli.configuration.use_ssl
 
       response = http.start {|h| h.request(request)}
 
