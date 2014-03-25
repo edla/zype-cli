@@ -9,5 +9,9 @@ module ZypeCli
     def find(zobject, id)
       load(service.get("/zobjects/#{id}", zobject: zobject))
     end
+    
+    def create(zobject, attributes={})
+      load(service.post("/zobjects", zobject: zobject, attributes: attributes))
+    end
   end
 end

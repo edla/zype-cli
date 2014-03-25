@@ -8,11 +8,13 @@ module ZypeCli
     class ServerError < StandardError; end    
     class ImATeapot < StandardError; end
     class Unauthorized < StandardError; end
+    class UnprocessableEntity < StandardError; end
     
     ERROR_TYPES = {
       '401' => Unauthorized,
       '404' => NotFound,
       '418' => ImATeapot,
+      '422' => UnprocessableEntity,
       '500' => ServerError
     }.freeze
 
@@ -105,6 +107,23 @@ module ZypeCli
 
       handle_response(response)
     end
+    
+    def post(path,params={})
+      raise NoApiKey if ZypeCli.configuration.api_key.to_s.empty?
+      
+      params.merge!('api_key' => ZypeCli.configuration.api_key)
+      
+      request = Net::HTTP::Post.new(path)
+      request.body = MultiJson.encode(params)
+      request["Content-Type"] = "application/json"
+  
+      http = Net::HTTP.new(ZypeCli.configuration.host, ZypeCli.configuration.port)
+      http.use_ssl = ZypeCli.configuration.use_ssl
+
+      response = http.start {|h| h.request(request)}
+
+      handle_response(response)
+    end  
   
     def handle_response(response)
       json = MultiJson.decode(response.body)
