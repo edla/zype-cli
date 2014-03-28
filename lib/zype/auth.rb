@@ -11,12 +11,10 @@ module Zype
 
       def load_configuration
         Zype.configuration = get_configuration
-        
-        write_configuration
       end
       
       def get_configuration
-        self.configuration = (read_configuration || ask_for_configuration)
+        self.configuration = (read_configuration || ask_for_and_save_configuration)
       end
 
       def read_configuration
@@ -29,6 +27,12 @@ module Zype
           end
         end
       end 
+      
+      def ask_for_and_save_configuration
+        ask_for_configuration
+        
+        write_configuration
+      end
       
       def ask_for_configuration
         config = Configuration.new
