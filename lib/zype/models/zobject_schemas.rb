@@ -1,6 +1,6 @@
-module ZypeCli
-  class ZobjectSchemas < ZypeCli::Collection
-    model Zobject
+module Zype
+  class ZobjectSchemas < Zype::Collection
+    model ZobjectSchema
 
     def all(filters={}, page=0, pagesize=10)
       load(service.get('/zobject_schemas', filters: filters, page: page, pagesize: pagesize))

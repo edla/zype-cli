@@ -1,5 +1,5 @@
-module ZypeCli
-  class Videos < ZypeCli::Collection
+module Zype
+  class Videos < Zype::Collection
     model Video
 
     def all(filters={}, page=0, pagesize=10)

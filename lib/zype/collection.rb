@@ -1,4 +1,4 @@
-module ZypeCli
+module Zype
   class Collection
     attr_reader :service
     

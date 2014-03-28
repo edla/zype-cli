@@ -1,6 +1,6 @@
 require 'net/https'
 
-module ZypeCli
+module Zype
   class Client
 
     class NoApiKey < StandardError; end
@@ -9,6 +9,9 @@ module ZypeCli
     class ImATeapot < StandardError; end
     class Unauthorized < StandardError; end
     class UnprocessableEntity < StandardError; end
+
+    # for error types not explicity mapped
+    class GenericError < StandardError; end
     
     ERROR_TYPES = {
       '401' => Unauthorized,
@@ -36,9 +39,9 @@ module ZypeCli
           for collection in collections
             require [@model_path, collection].join('/')
             constant = collection.to_s.split('_').map {|characters| characters[0...1].upcase << characters[1..-1]}.join('')
-            ZypeCli::Client.class_eval <<-EOS, __FILE__, __LINE__
+            Zype::Client.class_eval <<-EOS, __FILE__, __LINE__
               def #{collection}(attributes = {})
-                ZypeCli::#{constant}.new({:service => self}.merge(attributes))
+                Zype::#{constant}.new({:service => self}.merge(attributes))
               end
             EOS
           end
@@ -80,28 +83,29 @@ module ZypeCli
     end
     
     
-    model_path 'zype-cli/models'
-    
+    model_path 'zype/models'
+
+    model :data_source    
     model :video
     model :zobject_schema
     model :zobject
-    
+
+    collection :data_sources    
     collection :videos
     collection :zobject_schemas
     collection :zobjects
     
- 
     def get(path,params={})
-      raise NoApiKey if ZypeCli.configuration.api_key.to_s.empty?
+      raise NoApiKey if Zype.configuration.api_key.to_s.empty?
       
-      params.merge!('api_key' => ZypeCli.configuration.api_key)
+      params.merge!('api_key' => Zype.configuration.api_key)
       
       request = Net::HTTP::Get.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
 
-      http = Net::HTTP.new(ZypeCli.configuration.host, ZypeCli.configuration.port)
-      http.use_ssl = ZypeCli.configuration.use_ssl
+      http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
+      http.use_ssl = Zype.configuration.use_ssl
 
       response = http.start {|h| h.request(request)}
 
@@ -109,26 +113,44 @@ module ZypeCli
     end
     
     def post(path,params={})
-      raise NoApiKey if ZypeCli.configuration.api_key.to_s.empty?
+      raise NoApiKey if Zype.configuration.api_key.to_s.empty?
       
-      params.merge!('api_key' => ZypeCli.configuration.api_key)
+      params.merge!('api_key' => Zype.configuration.api_key)
       
       request = Net::HTTP::Post.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
   
-      http = Net::HTTP.new(ZypeCli.configuration.host, ZypeCli.configuration.port)
-      http.use_ssl = ZypeCli.configuration.use_ssl
+      http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
+      http.use_ssl = Zype.configuration.use_ssl
 
       response = http.start {|h| h.request(request)}
 
       handle_response(response)
     end  
+    
+    def delete(path,params={})
+      raise NoApiKey if Zype.configuration.api_key.to_s.empty?
+      
+      params.merge!('api_key' => Zype.configuration.api_key)
+      
+      request = Net::HTTP::Delete.new(path)
+      request.body = MultiJson.encode(params)
+      request["Content-Type"] = "application/json"
+  
+      http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
+      http.use_ssl = Zype.configuration.use_ssl
+
+      response = http.start {|h| h.request(request)}
+
+      handle_response(response)
+    end 
   
     def handle_response(response)
-      json = MultiJson.decode(response.body)
+      json = MultiJson.decode(response.body) if response.body
     
-      if response.code == '200'
+      case response.code
+      when /2(\d{2})/
         success!(response.code,json)
       else
         error!(response.code,json)
@@ -140,7 +162,8 @@ module ZypeCli
     end
     
     def error!(status,response)
-      raise ERROR_TYPES[status].new(response['message'])
+      error_type = ERROR_TYPES[status] || GenericError
+      raise error_type.new(response['message'])
     end
   end
 end

@@ -1,5 +1,5 @@
-module ZypeCli
-  class Zobjects < ZypeCli::Collection
+module Zype
+  class Zobjects < Zype::Collection
     model Zobject
 
     def all(zobject, filters={}, page=0, pagesize=10)
