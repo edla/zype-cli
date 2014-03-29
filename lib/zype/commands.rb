@@ -3,7 +3,7 @@ require "thor"
 require 'zype/auth'
 
 require "zype/commands/configure"
-require "zype/commands/data_source"
+require "zype/commands/video_source"
 require "zype/commands/video"
 require "zype/commands/zobject"
 require "zype/commands/zobject_schema"

@@ -14,28 +14,28 @@ Gem::Specification.new do |s|
     "bin/zype",
     "lib/zype.rb",
     "lib/zype/auth.rb",
-    "lib/zype/cli.rb",    
+    "lib/zype/cli.rb",
     "lib/zype/client.rb",
     "lib/zype/collection.rb",
     "lib/zype/commands.rb",
     "lib/zype/commands/configure.rb",
-    "lib/zype/commands/data_source.rb",
-    "lib/zype/commands/video.rb",    
-    "lib/zype/commands/zobject.rb",    
-    "lib/zype/commands/zobject_schema.rb",    
+    "lib/zype/commands/video_source.rb",
+    "lib/zype/commands/video.rb",
+    "lib/zype/commands/zobject.rb",
+    "lib/zype/commands/zobject_schema.rb",
     "lib/zype/configuration.rb",
     "lib/zype/helpers.rb",
-    "lib/zype/model.rb",    
-    "lib/zype/models/data_source.rb",
-    "lib/zype/models/data_sources.rb",    
+    "lib/zype/model.rb",
+    "lib/zype/models/video_source.rb",
+    "lib/zype/models/video_sources.rb",
     "lib/zype/models/video.rb",
     "lib/zype/models/videos.rb",
     "lib/zype/models/zobject_schema.rb",
     "lib/zype/models/zobject_schemas.rb",
     "lib/zype/models/zobject.rb",
-    "lib/zype/models/zobjects.rb"    
+    "lib/zype/models/zobjects.rb"
   ]
-  
+
   s.executables = [
     "zype"
   ]

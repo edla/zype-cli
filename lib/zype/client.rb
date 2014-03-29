@@ -5,14 +5,14 @@ module Zype
 
     class NoApiKey < StandardError; end
     class NotFound < StandardError; end
-    class ServerError < StandardError; end    
+    class ServerError < StandardError; end
     class ImATeapot < StandardError; end
     class Unauthorized < StandardError; end
     class UnprocessableEntity < StandardError; end
 
     # for error types not explicity mapped
     class GenericError < StandardError; end
-    
+
     ERROR_TYPES = {
       '401' => Unauthorized,
       '404' => NotFound,
@@ -26,7 +26,7 @@ module Zype
 
       def new(options={})
         setup_requirements
-                
+
         old_new
       end
 
@@ -81,25 +81,25 @@ module Zype
         @requests ||= []
       end
     end
-    
-    
+
+
     model_path 'zype/models'
 
-    model :data_source    
+    model :video_source
     model :video
     model :zobject_schema
     model :zobject
 
-    collection :data_sources    
+    collection :video_sources
     collection :videos
     collection :zobject_schemas
     collection :zobjects
-    
+
     def get(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
-      
+
       params.merge!('api_key' => Zype.configuration.api_key)
-      
+
       request = Net::HTTP::Get.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
@@ -111,56 +111,56 @@ module Zype
 
       handle_response(response)
     end
-    
+
     def post(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
-      
+
       params.merge!('api_key' => Zype.configuration.api_key)
-      
+
       request = Net::HTTP::Post.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
-  
+
       http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
       http.use_ssl = Zype.configuration.use_ssl
 
       response = http.start {|h| h.request(request)}
 
       handle_response(response)
-    end  
-    
+    end
+
     def delete(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
-      
+
       params.merge!('api_key' => Zype.configuration.api_key)
-      
+
       request = Net::HTTP::Delete.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
-  
+
       http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
       http.use_ssl = Zype.configuration.use_ssl
 
       response = http.start {|h| h.request(request)}
 
       handle_response(response)
-    end 
-  
+    end
+
     def handle_response(response)
       json = MultiJson.decode(response.body) if response.body
-    
+
       case response.code
       when /2(\d{2})/
         success!(response.code,json)
       else
         error!(response.code,json)
-      end        
+      end
     end
-  
+
     def success!(status, response)
       response
     end
-    
+
     def error!(status,response)
       error_type = ERROR_TYPES[status] || GenericError
       raise error_type.new(response['message'])
