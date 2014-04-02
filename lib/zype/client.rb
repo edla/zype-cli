@@ -98,11 +98,10 @@ module Zype
     def get(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
       
-      params.merge!('api_key' => Zype.configuration.api_key)
-      
       request = Net::HTTP::Get.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
+      request["x-zype-key"] = Zype.configuration.api_key
 
       http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
       http.use_ssl = Zype.configuration.use_ssl
@@ -114,12 +113,11 @@ module Zype
     
     def post(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
-      
-      params.merge!('api_key' => Zype.configuration.api_key)
-      
+            
       request = Net::HTTP::Post.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
+      request["x-zype-key"] = Zype.configuration.api_key
   
       http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
       http.use_ssl = Zype.configuration.use_ssl
@@ -131,12 +129,11 @@ module Zype
     
     def delete(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
-      
-      params.merge!('api_key' => Zype.configuration.api_key)
-      
+            
       request = Net::HTTP::Delete.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
+      request["x-zype-key"] = Zype.configuration.api_key
   
       http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
       http.use_ssl = Zype.configuration.use_ssl
