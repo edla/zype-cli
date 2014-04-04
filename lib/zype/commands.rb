@@ -8,6 +8,8 @@ require "zype/commands/video"
 require "zype/commands/zobject"
 require "zype/commands/zobject_schema"
 
+require "zype/progress_bar"
+
 module Zype
   class Commands < Thor
 

@@ -28,12 +28,16 @@ Gem::Specification.new do |s|
     "lib/zype/model.rb",    
     "lib/zype/models/data_source.rb",
     "lib/zype/models/data_sources.rb",    
+    "lib/zype/models/upload.rb",
+    "lib/zype/models/uploads.rb",    
     "lib/zype/models/video.rb",
     "lib/zype/models/videos.rb",
     "lib/zype/models/zobject_schema.rb",
     "lib/zype/models/zobject_schemas.rb",
     "lib/zype/models/zobject.rb",
-    "lib/zype/models/zobjects.rb"    
+    "lib/zype/models/zobjects.rb",
+    "lib/zype/file_reader.rb",
+    "lib/zype/progress_bar.rb"    
   ]
   
   s.executables = [

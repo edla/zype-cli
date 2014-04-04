@@ -86,11 +86,13 @@ module Zype
     model_path 'zype/models'
 
     model :data_source    
+    model :upload
     model :video
     model :zobject_schema
     model :zobject
 
     collection :data_sources    
+    collection :uploads
     collection :videos
     collection :zobject_schemas
     collection :zobjects
@@ -115,6 +117,22 @@ module Zype
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
             
       request = Net::HTTP::Post.new(path)
+      request.body = MultiJson.encode(params)
+      request["Content-Type"] = "application/json"
+      request["x-zype-key"] = Zype.configuration.api_key
+  
+      http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
+      http.use_ssl = Zype.configuration.use_ssl
+
+      response = http.start {|h| h.request(request)}
+
+      handle_response(response)
+    end  
+    
+    def put(path,params={})
+      raise NoApiKey if Zype.configuration.api_key.to_s.empty?
+            
+      request = Net::HTTP::Put.new(path)
       request.body = MultiJson.encode(params)
       request["Content-Type"] = "application/json"
       request["x-zype-key"] = Zype.configuration.api_key
