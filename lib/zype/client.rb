@@ -85,15 +85,15 @@ module Zype
     
     model_path 'zype/models'
 
-    model :data_source    
     model :upload
     model :video
+    model :video_source        
     model :zobject_schema
     model :zobject
 
-    collection :data_sources    
     collection :uploads
     collection :videos
+    collection :video_sources    
     collection :zobject_schemas
     collection :zobjects
     

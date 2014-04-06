@@ -3,7 +3,8 @@ module Zype
     def save
       res = service.put("/uploads/#{self['_id']}", upload: {
         progress: progress,
-        status: status
+        status: status,
+        message: message
       })
       
       merge(res)
