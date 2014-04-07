@@ -1,4 +1,4 @@
-require 'rainbow/ext/string'
+require 'rainbow'
 
 module Zype
   #
