@@ -11,7 +11,7 @@ module Zype
     end
     
     def create(attributes={})
-      load(service.post("/video_sources", attributes: attributes))
+      load(service.post("/video_sources", video_source: attributes))
     end
   end
 end
