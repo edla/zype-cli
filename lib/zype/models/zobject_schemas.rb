@@ -11,7 +11,7 @@ module Zype
     end
     
     def create(attributes={})
-      load(service.post("/zobject_schemas", attributes: attributes))
+      load(service.post("/zobject_schemas", zobject_schema: attributes))
     end
   end
 end
