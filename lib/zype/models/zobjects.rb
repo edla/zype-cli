@@ -9,9 +9,9 @@ module Zype
     def find(zobject, id)
       load(service.get("/zobjects/#{id}", zobject: zobject))
     end
-    
-    def create(zobject, attributes={})
-      load(service.post("/zobjects", zobject: zobject, attributes: attributes))
+
+    def create(zobject, attributes={}, pictures={})
+      load(service.post("/zobjects", zobject: zobject, attributes: attributes, pictures: pictures))
     end
   end
 end
