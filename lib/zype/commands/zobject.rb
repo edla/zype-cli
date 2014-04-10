@@ -19,12 +19,7 @@ module Zype
       puts "---"
 
       zobjects.each do |zobject|
-        puts "Title: #{zobject.title} (ID: #{zobject._id})"
-        puts "Attributes:"
-        zobject.keys.sort.each do |key|
-          puts "  #{key}: #{zobject[key]}"
-        end
-        puts "---"
+       print_zobject(zobject)
       end
     end
 
@@ -44,12 +39,26 @@ module Zype
     desc "zobject:create", "Create Zobjects"
 
     method_option "schema",     aliases: ["s"], type: :string, required: true, desc: "Specify zobject schema"
-    method_option "attributes", aliases: ["a"], type: :hash,   required: true, desc: "Specify schema attributes"
+    method_option "attributes", aliases: ["a"], type: :hash, required: true, desc: "Specify schema attributes"
+    method_option "pictures", aliases: ["p"], type: :hash, required: false, desc: "Specify pictures hash"
 
     define_method "zobject:create" do
       load_configuration
 
-      Zype::Client.new.zobjects.create(options[:schema],options[:attributes]).inspect
+      zobject = Zype::Client.new.zobjects.create(options[:schema],options[:attributes], options[:pictures])
+      print_zobject(zobject)
+    end
+
+    no_commands do
+
+      def print_zobject(zobject)
+        puts "Title: #{zobject.title} (ID: #{zobject._id})"
+        puts "Attributes:"
+        zobject.keys.sort.each do |key|
+          puts "  #{key}: #{zobject[key]}"
+        end
+        puts "---"
+      end
     end
   end
 end
