@@ -44,6 +44,9 @@ module Zype
     
     desc "video:upload", "Uploads a video"
     
+    method_option "title", aliases: "t", type: :string, required:true, desc: "New video title"
+    method_option "keywords", aliases: "k", type: :array, desc: "New video keywords"
+    
     method_option "filename", aliases: "f", type: :string, required: false, desc: "File path to upload"
     method_option "directory", aliases: "d", type: :string, required: false, desc: "Directory to upload"
     
@@ -65,7 +68,10 @@ module Zype
       end
       
       uploads.each do |u|
-        transcode_video(u)
+        transcode_video(u,
+          title: options[:title],
+          keywords: options[:keywords]
+        )
       end
     end
   
@@ -80,8 +86,8 @@ module Zype
         puts "---"
       end
       
-      def transcode_video(upload)
-        Zype::Client.new.videos.create(title: upload.filename, upload_id: upload["_id"])
+      def transcode_video(upload,options={})
+        Zype::Client.new.videos.create(options.merge(upload_id: upload["_id"]))
       end
       
       def upload_video(filename)        
