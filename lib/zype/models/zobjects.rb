@@ -13,5 +13,9 @@ module Zype
     def create(zobject, attributes={}, pictures={})
       load(service.post("/zobjects", zobject: zobject, attributes: attributes, pictures: pictures))
     end
+
+    def import(zobject, filename)
+      load(service.post("/zobjects/import", zobject: zobject, filename: filename))
+    end
   end
 end
