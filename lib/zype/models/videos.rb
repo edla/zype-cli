@@ -14,8 +14,8 @@ module Zype
       load(service.post("/videos", video: attributes))
     end
 
-    def play(id, container, options = {})
-      load(service.get("/videos/#{id}/play", container: container, options: options))
+    def embed(id, container_id, options = {})
+      load(service.get("/videos/#{id}/player", container_id: container_id, options: options))
     end
   end
 end
