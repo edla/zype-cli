@@ -9,9 +9,13 @@ module Zype
     def find(id)
       load(service.get("/videos/#{id}"))
     end
-    
+
     def create(attributes={})
       load(service.post("/videos", video: attributes))
+    end
+
+    def play(id, container, options = {})
+      load(service.get("/videos/#{id}/play", container: container, options: options))
     end
   end
 end
