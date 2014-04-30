@@ -2,8 +2,8 @@ module Zype
   class Zobjects < Zype::Collection
     model Zobject
 
-    def all(zobject, filters={}, page=0, pagesize=10)
-      load(service.get('/zobjects', zobject: zobject, filters: filters, page: page, pagesize: pagesize))
+    def all(zobject, filters={}, page=0, per_page=10)
+      load(service.get('/zobjects', zobject: zobject, filters: filters, page: page, per_page: per_page))
     end
 
     def find(zobject, id)
