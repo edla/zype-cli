@@ -1,3 +1,4 @@
+require 'pry-debugger'
 module Zype
   class Zobject < Zype::Model
 
@@ -6,9 +7,9 @@ module Zype
       videos = []
       unless array.empty?
         id_string = array.join(',')
-        videos.push(service.videos.find(id_string)).flatten
+        videos.push(service.videos.find(id_string))
       end
-      videos
+      videos.flatten
     end
 
   end
