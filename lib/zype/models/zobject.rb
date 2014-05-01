@@ -8,6 +8,7 @@ module Zype
         id_string = array.join(',')
         videos.push(service.videos.find(id_string)).flatten
       end
+      videos
     end
 
   end
