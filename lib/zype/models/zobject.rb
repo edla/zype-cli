@@ -7,7 +7,7 @@ module Zype
       videos = []
       unless array.empty?
         id_string = array.join(',')
-        videos.push(service.videos.find(id_string))
+        videos += service.videos.find(id_string)
       end
       videos.flatten
     end
