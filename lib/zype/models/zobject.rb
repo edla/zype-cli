@@ -1,4 +1,3 @@
-require 'pry-debugger'
 module Zype
   class Zobject < Zype::Model
 
