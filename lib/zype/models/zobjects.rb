@@ -13,5 +13,9 @@ module Zype
     def create(zobject, attributes={})
       load(service.post("/zobjects", zobject: zobject, attributes: attributes))
     end
+
+    def search(search_terms, zobject_schemas=[], page=0, per_page=10, sort="title", order="asc")
+       load(service.get('/zobjects/search', search_terms: search_terms, zobject_schemas: zobject_schemas, page: page, per_page: per_page, sort: sort, order: order))
+    end
   end
 end

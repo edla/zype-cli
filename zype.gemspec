@@ -36,8 +36,6 @@ Gem::Specification.new do |s|
     "lib/zype/models/zobject_schemas.rb",
     "lib/zype/models/zobject.rb",
     "lib/zype/models/zobjects.rb",
-    "lib/zype/models/search.rb",
-    "lib/zype/models/searches.rb",
     "lib/zype/file_reader.rb",
     "lib/zype/progress_bar.rb"
   ]

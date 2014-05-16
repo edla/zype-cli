@@ -90,14 +90,12 @@ module Zype
     model :video_source
     model :zobject_schema
     model :zobject
-    model :search
 
     collection :uploads
     collection :videos
     collection :video_sources
     collection :zobject_schemas
     collection :zobjects
-    collection :searches
 
     def get(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
