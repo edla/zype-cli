@@ -17,5 +17,9 @@ module Zype
     def embed(id, options = {})
       load(service.get("/videos/#{id}/player", options: options))
     end
+
+    def search(search_terms, page=0, per_page=10, sort="title", order="asc")
+      load(service.get('/videos/search', search_terms: search_terms, page: page, per_page: per_page, sort: sort, order: order))
+    end
   end
 end
