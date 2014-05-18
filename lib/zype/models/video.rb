@@ -10,7 +10,7 @@ module Zype
     end
 
     def player(options = {})
-      load(service.get("/videos/#{_id}/player", options: options))
+      load(service.get("/videos/#{self['_id']}/player", options: options))
     end
   end
 end
