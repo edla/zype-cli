@@ -5,8 +5,12 @@ module Zype
         title: title,
         keywords: keywords
       })
-      
+
       merge(res)
+    end
+
+    def player(options = {})
+      load(service.get("/videos/#{_id}/player", options: options))
     end
   end
 end
