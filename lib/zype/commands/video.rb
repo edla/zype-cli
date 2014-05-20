@@ -68,10 +68,9 @@ module Zype
       end
 
       uploads.each do |u|
-        transcode_video(u,
-          title: options[:title],
-          keywords: options[:keywords]
-        )
+        if u.status == 'complete'
+          transcode_video(u, title: options[:title], keywords: options[:keywords])
+        end
       end
     end
 
