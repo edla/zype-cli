@@ -1,17 +1,6 @@
 module Zype
-  #
-  # Ruby/ProgressBar - a text progress bar library
-  #
-  # Copyright (C) 2001-2005 Satoru Takabayashi <satoru@namazu.org>
-  #     All rights reserved.
-  #     This is free software with ABSOLUTELY NO WARRANTY.
-  #
-  # You can redistribute it and/or modify it under the terms
-  # of Ruby's license.
-  #
 
   class ProgressBar
-    VERSION = "0.21.0"
 
     def initialize (title, total, out = STDERR)
       @title = title
@@ -278,13 +267,6 @@ module Zype
 
     def inspect
       "#<ProgressBar:#{@current}/#{@total}>"
-    end
-
-  end
-
-  class ReversedProgressBar < ProgressBar
-    def do_percentage
-      100 - super
     end
   end
 end

@@ -13,7 +13,6 @@ module Zype
     define_method "video:list" do
       load_configuration
 
-      puts 'foo'
       videos = Zype::Client.new.videos.all(options[:filters], options[:page], options[:count])
 
       puts "Found #{videos.size} video(s)"
@@ -56,22 +55,18 @@ module Zype
     define_method "video:upload" do
       load_configuration
 
-      uploads = []
+      filenames = []
 
       if filename = options[:filename]
-        uploads << upload_video(filename)
-      end
-      if directory = options[:directory]
-        Dir.foreach(directory) do |filename|
-          next if filename == '.' or filename == '..'
-          uploads << upload_video(directory + "/" + filename)
-        end
+        filenames << filename
       end
 
-      uploads.each do |u|
-        if u.status == 'complete'
-          transcode_video(u, title: options[:title], keywords: options[:keywords])
-        end
+      if directory = options[:directory]
+        filenames << Dir.entries(directory).reject{|f| f =~ /(^\.\.)|(^\.)/}
+      end
+
+      filenames.each do |filename|
+        upload_and_transcode_video(filename, options)
       end
     end
 
@@ -84,6 +79,14 @@ module Zype
           puts "  #{key}: #{video[key]}"
         end
         puts "---"
+      end
+
+      def upload_and_transcode_video(filename,options)
+        upload = upload_video(filename)
+
+        if upload.status == 'complete'
+          transcode_video(upload, title: options[:title], keywords: options[:keywords])
+        end
       end
 
       def transcode_video(upload,options={})
