@@ -1,5 +1,5 @@
-require "thor"
-require 'progressbar'
+require 'thor'
+require 'zype/progress_bar'
 require 'zype/file_reader'
 
 module Zype
@@ -13,6 +13,7 @@ module Zype
     define_method "video:list" do
       load_configuration
 
+      puts 'foo'
       videos = Zype::Client.new.videos.all(options[:filters], options[:page], options[:count])
 
       puts "Found #{videos.size} video(s)"

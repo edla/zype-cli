@@ -1,5 +1,3 @@
-require 'rainbow/ext/string'
-
 module Zype
   #
   # Ruby/ProgressBar - a text progress bar library
