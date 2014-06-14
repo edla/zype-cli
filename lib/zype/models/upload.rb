@@ -7,7 +7,7 @@ module Zype
         message: message
       })
       
-      merge(res)
+      merge(res["response"])
     end
   end
 end

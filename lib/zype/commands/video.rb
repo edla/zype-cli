@@ -46,6 +46,7 @@ module Zype
 
     method_option "title", aliases: "t", type: :string, required:true, desc: "New video title"
     method_option "keywords", aliases: "k", type: :array, desc: "New video keywords"
+
     method_option "filename", aliases: "f", type: :string, required: false, desc: "File path to upload"
     method_option "directory", aliases: "d", type: :string, required: false, desc: "Directory to upload"
 
@@ -59,18 +60,19 @@ module Zype
       if filename = options[:filename]
         uploads << upload_video(filename)
       end
-      if directory = options[:directory]
-        Dir.foreach(directory) do |filename|
-          next if filename == '.' or filename == '..'
-          uploads << upload_video(directory + "/" + filename)
-        end
+
+      filenames = []
+
+      if filename = options[:filename]
+        filenames << filename
       end
 
-      uploads.each do |u|
-        transcode_video(u,
-          title: options[:title],
-          keywords: options[:keywords]
-        )
+      if directory = options[:directory]
+        filenames << Dir.entries(directory).reject{|f| f =~ /(^\.\.)|(^\.)/}
+      end
+
+      filenames.each do |filename|
+        upload_and_transcode_video(filename, options)
       end
     end
 
@@ -83,6 +85,14 @@ module Zype
           puts "  #{key}: #{video[key]}"
         end
         puts "---"
+      end
+
+      def upload_and_transcode_video(filename,options)
+        upload = upload_video(filename)
+
+        if upload.status == 'complete'
+          transcode_video(upload, title: options[:title], keywords: options[:keywords])
+        end
       end
 
       def transcode_video(upload,options={})
