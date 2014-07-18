@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     "lib/zype/collection.rb",
     "lib/zype/commands.rb",
     "lib/zype/commands/configure.rb",
+    "lib/zype/commands/playlist.rb",
     "lib/zype/commands/video_source.rb",
     "lib/zype/commands/video.rb",
     "lib/zype/commands/zobject.rb",
