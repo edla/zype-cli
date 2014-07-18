@@ -26,6 +26,8 @@ Gem::Specification.new do |s|
     "lib/zype/configuration.rb",
     "lib/zype/helpers.rb",
     "lib/zype/model.rb",
+    "lib/zype/models/playlist.rb",
+    "lib/zype/models/playlists.rb",
     "lib/zype/models/video_source.rb",
     "lib/zype/models/video_sources.rb",
     "lib/zype/models/upload.rb",
