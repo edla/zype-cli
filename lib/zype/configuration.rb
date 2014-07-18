@@ -3,14 +3,14 @@ require 'yaml'
 module Zype
   class Configuration
     extend Zype::Helpers
-    
+
     attr_accessor :api_key
-    attr_accessor :host    
+    attr_accessor :host
     attr_accessor :port
     attr_accessor :use_ssl
-    
+
     class << self
-      
+
       def load_yaml(yaml)
         Zype::Configuration.new.tap do |c|
           c.api_key = yaml['api_key']
@@ -19,9 +19,9 @@ module Zype
           c.use_ssl = yaml['use_ssl']
         end
       end
-    
+
     end
-    
+
     def initialize
       @host = 'api.zype-core.com'
       @port = 3000

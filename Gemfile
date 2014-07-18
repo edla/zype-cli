@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'aws-sdk'
 gem 'multi_json'
 gem 'hashie'
 gem 'thor'

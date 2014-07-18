@@ -82,9 +82,9 @@ module Zype
       end
     end
 
-
     model_path 'zype/models'
 
+    model :account
     model :upload
     model :video
     model :video_source
@@ -96,6 +96,10 @@ module Zype
     collection :video_sources
     collection :zobject_schemas
     collection :zobjects
+
+    def account
+      Zype::Account.new(get('/account')['response'])
+    end
 
     def get(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?

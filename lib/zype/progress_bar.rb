@@ -13,9 +13,9 @@ module Zype
       @finished_p = false
       @start_time = Time.now
       @previous_time = @start_time
-      @title_width = 50
-      @format = "%-#{@title_width}s %s %3d%% %s"
-      @format_arguments = [:title, :stat, :percentage, :bar]
+      @title_width = 40
+      @format = "%-#{@title_width}s %s %s  %3d%%  %s"
+      @format_arguments = [:title, :stat, :total, :percentage, :bar]
       clear
       show
       if block_given?
@@ -61,6 +61,10 @@ module Zype
 
     def fmt_title
       @title[0,(@title_width - 1)] + ":"
+    end
+
+    def fmt_total
+      "#{@current}/#{@total}"
     end
 
     def convert_bytes (bytes)
@@ -203,11 +207,7 @@ module Zype
         prev_percentage = (@previous * 100 / @total).to_i
       end
 
-      # Use "!=" instead of ">" to support negative changes
-      if cur_percentage != prev_percentage ||
-          Time.now - @previous_time >= 1 || @finished_p
-        show
-      end
+      show
     end
 
   public
