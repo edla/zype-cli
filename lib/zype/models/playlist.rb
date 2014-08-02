@@ -5,8 +5,8 @@ module Zype
       true
     end
 
-    def videos
-      Zype::Videos.new.load(service.get("/playlists/#{_id}/videos"))
+    def videos(params={})
+      Zype::Videos.new.load(service.get("/playlists/#{_id}/videos", params))
     end
   end
 end

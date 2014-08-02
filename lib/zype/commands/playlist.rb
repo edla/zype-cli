@@ -4,14 +4,20 @@ module Zype
   class Commands < Thor
     desc "playlist:list", "List playlists"
 
-    method_option "filters", aliases: "f", type: :hash,    default: {}, desc: "playlist query filters"
+    method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
+    method_option "category", aliases: "c", type: :hash, desc: "Optional category filters"
     method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
-    method_option "count",   aliases: "c", type: :numeric, default: 10, desc: "Number of results to return"
+    method_option "per_page",   aliases: "s", type: :numeric, default: 10, desc: "Number of results to return"
 
     define_method "playlist:list" do
       load_configuration
 
-      playlists = Zype::Client.new.playlists.all(options[:filters], options[:page], options[:pagesize])
+      playlists = Zype::Client.new.playlists.all(
+        :q => options[:query],
+        :category => options[:category],
+        :page => options[:page],
+        :per_page => options[:per_page]
+      )
 
       puts "Found #{playlists.size} playlists(s)"
       puts "---"
@@ -26,41 +32,31 @@ module Zype
       end
     end
 
-    desc "playlist:create", "Create playlist"
-
-    method_option "attributes", aliases: "a", type: :hash, required: true, desc: "Specify playlist attributes"
-
-    define_method "playlist:create" do
-      load_configuration
-
-      puts Zype::Client.new.playlists.create(options[:attributes])
-    end
-
-    desc "playlist:destroy", "Destroy playlist"
-
-    method_option "id", aliases: "i", type: :string, required: true, desc: "Playlist ID"
-
-    define_method "playlist:destroy" do
-      load_configuration
-
-      puts Zype::Client.new.playlists.find(options[:id]).destroy
-    end
-
     desc "playlist:videos", "List playlist videos"
 
     method_option "id", aliases: "i", type: :string, required: true, desc: "Playlist ID"
+    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
+    method_option "per_page",   aliases: "s", type: :numeric, default: 10, desc: "Number of results to return"
 
     define_method "playlist:videos" do
       load_configuration
 
-      playlist = Zype::Client.new.playlists.find(options[:id])
-      videos = playlist.videos
+      begin
+        playlist = Zype::Client.new.playlists.find(options[:id])
 
-      puts "Found #{videos.size} video(s)"
-      puts "---"
+        videos = playlist.videos(
+          :page => options[:page],
+          :per_page => options[:per_page]
+        )
 
-      videos.each do |video|
-        print_video(video)
+        puts "Found #{videos.size} video(s)"
+        puts "---"
+
+        videos.each do |video|
+          print_video(video)
+        end
+      rescue Zype::Client::NotFound => e
+        puts "Could not find playlist: #{options[:id]}"
       end
     end
 

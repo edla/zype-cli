@@ -2,8 +2,8 @@ module Zype
   class Playlists < Zype::Collection
     model Playlist
 
-    def all(filters={}, page=0, per_page=10)
-      load(service.get('/playlists', filters: filters, page: page, per_page: per_page))
+    def all(params={})
+      load(service.get('/playlists', params))
     end
 
     def find(id)
