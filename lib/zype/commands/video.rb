@@ -6,14 +6,22 @@ module Zype
   class Commands < Thor
     desc "video:list", "List Zype videos"
 
-    method_option "filters", aliases: "f", type: :hash,    default: {}, desc: "Specify video filters"
-    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Specify the page of videos to return"
-    method_option "count",   aliases: "c", type: :numeric, default: 10, desc: "Specify the number of videos to return"
+    method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
+    method_option "category", aliases: "c", type: :hash, desc: "Optional category filters"
+    method_option "active", aliases: "a", type: :string, default: 'true', desc: "Show active (true), inactive (false) or all (all) videos"
+    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
+    method_option "per_page",   aliases: "s", type: :numeric, default: 10, desc: "Number of results to return"
 
     define_method "video:list" do
       load_configuration
 
-      videos = Zype::Client.new.videos.all(options[:filters], options[:page], options[:count])
+      videos = Zype::Client.new.videos.all(
+        :q => options[:query],
+        :category => options[:category],
+        :active => options[:active],
+        :page => options[:page],
+        :per_page => options[:per_page]
+      )
 
       puts "Found #{videos.size} video(s)"
       puts "---"
@@ -26,16 +34,22 @@ module Zype
     desc "video:update", "Updates a video"
 
     method_option "id", aliases: "i", type: :string, required: true, desc: "The video to update"
-
+    method_option "active", aliases: "a", type: :boolean, desc: "New video status"
+    method_option "featured", aliases: "f", type: :boolean, desc: "New featured status"
     method_option "title", aliases: "t", type: :string, desc: "New video title"
+    method_option "description", aliases: "d", type: :string, desc: "New video description"
     method_option "keywords", aliases: "k", type: :array, desc: "New video keywords"
 
     define_method "video:update" do
       load_configuration
 
       if video = Zype::Client.new.videos.find(options[:id])
-        video.title = options[:title] if options[:title]
-        video.keywords = options[:keywords] if options[:keywords]
+        video.title = options[:title] unless options[:title].nil?
+        video.keywords = options[:keywords] unless options[:keywords].nil?
+        video.active = options[:active] unless options[:active].nil?
+        video.featured = options[:featured] unless options[:featured].nil?
+        video.description = options[:description] unless options[:description].nil?
+
         video.save
         print_video(video)
       end

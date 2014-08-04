@@ -6,6 +6,7 @@ module Zype
 
     method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
     method_option "category", aliases: "c", type: :hash, desc: "Optional category filters"
+    method_option "active", aliases: "a", type: :string, default: 'true', desc: "Show active (true), inactive (false) or all (all) playlists"
     method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
     method_option "per_page",   aliases: "s", type: :numeric, default: 10, desc: "Number of results to return"
 
@@ -15,6 +16,7 @@ module Zype
       playlists = Zype::Client.new.playlists.all(
         :q => options[:query],
         :category => options[:category],
+        :active => options[:active],
         :page => options[:page],
         :per_page => options[:per_page]
       )
