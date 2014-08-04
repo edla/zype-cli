@@ -8,7 +8,7 @@ module Zype
     method_option "category", aliases: "c", type: :hash, desc: "Optional category filters"
     method_option "active", aliases: "a", type: :string, default: 'true', desc: "Show active (true), inactive (false) or all (all) playlists"
     method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
-    method_option "per_page",   aliases: "s", type: :numeric, default: 10, desc: "Number of results to return"
+    method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
 
     define_method "playlist:list" do
       load_configuration
@@ -21,17 +21,7 @@ module Zype
         :per_page => options[:per_page]
       )
 
-      puts "Found #{playlists.size} playlists(s)"
-      puts "---"
-
-      playlists.each do |playlist|
-        puts "Title: #{playlist.title} (ID: #{playlist._id})"
-        puts "Attributes:"
-          playlist.keys.sort.each do |key|
-          puts "  #{key}: #{playlist[key]}"
-        end
-        puts "---"
-      end
+      print_playlists(playlists)
     end
 
     desc "playlist:videos", "List playlist videos"
@@ -51,12 +41,7 @@ module Zype
           :per_page => options[:per_page]
         )
 
-        puts "Found #{videos.size} video(s)"
-        puts "---"
-
-        videos.each do |video|
-          print_video(video)
-        end
+        print_videos(videos)
       rescue Zype::Client::NotFound => e
         puts "Could not find playlist: #{options[:id]}"
       end
@@ -64,13 +49,12 @@ module Zype
 
     no_commands do
 
-      def print_video(video)
-        puts "Title: #{video.title} (ID: #{video._id})"
-        puts "Attributes:"
-        video.keys.sort.each do |key|
-          puts "  #{key}: #{video[key]}"
-        end
-        puts "---"
+      def print_playlists(playlists)
+        puts Hirb::Helpers::Table.render(playlists, :fields=>[:_id, :title, :description, :active])
+      end
+
+      def print_videos(videos)
+        puts Hirb::Helpers::Table.render(videos, :fields=>[:_id, :title, :description, :duration, :status, :active])
       end
     end
   end

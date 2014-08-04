@@ -4,13 +4,15 @@ require 'zype/file_reader'
 
 module Zype
   class Commands < Thor
+    extend Hirb::Console
+
     desc "video:list", "List Zype videos"
 
     method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
     method_option "category", aliases: "c", type: :hash, desc: "Optional category filters"
     method_option "active", aliases: "a", type: :string, default: 'true', desc: "Show active (true), inactive (false) or all (all) videos"
     method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
-    method_option "per_page",   aliases: "s", type: :numeric, default: 10, desc: "Number of results to return"
+    method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
 
     define_method "video:list" do
       load_configuration
@@ -23,12 +25,7 @@ module Zype
         :per_page => options[:per_page]
       )
 
-      puts "Found #{videos.size} video(s)"
-      puts "---"
-
-      videos.each do |video|
-        print_video(video)
-      end
+      print_videos(videos)
     end
 
     desc "video:update", "Updates a video"
@@ -51,7 +48,7 @@ module Zype
         video.description = options[:description] unless options[:description].nil?
 
         video.save
-        print_video(video)
+        print_videos([video])
       end
       puts ""
     end
@@ -92,13 +89,8 @@ module Zype
 
     no_commands do
 
-      def print_video(video)
-        puts "Title: #{video.title} (ID: #{video._id})"
-        puts "Attributes:"
-        video.keys.sort.each do |key|
-          puts "  #{key}: #{video[key]}"
-        end
-        puts "---"
+      def print_videos(videos)
+        puts Hirb::Helpers::Table.render(videos, :fields=>[:_id, :title, :description, :duration, :status, :active])
       end
 
       def upload_and_transcode_video(filename,options)

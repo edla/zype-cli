@@ -6,21 +6,28 @@ module Zype
     desc "zobject:list", "List Zobjects"
 
     method_option "schema",  aliases: "s", type: :string,  required: true, desc: "Zobject schema title"
+    method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
     method_option "filters", aliases: "f", type: :hash,    default: {}, desc: "Zobject query filters"
+    method_option "active", aliases: "a", type: :string, default: 'true', desc: "Show active (true), inactive (false) or all (all) zobjects"
     method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
-    method_option "count",   aliases: "c", type: :numeric, default: 10, desc: "Number of results to return"
+    method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
 
     define_method "zobject:list" do
       load_configuration
 
-      zobjects = Zype::Client.new.zobjects.all(options[:schema],options[:filters], options[:page], options[:pagesize])
+      params = {
+        :q => options[:query],
+        :category => options[:category],
+        :active => options[:active],
+        :page => options[:page],
+        :per_page => options[:per_page]
+      }
 
-      puts "Found #{zobjects.size} zobjects(s)"
-      puts "---"
+      params.merge!(options[:filters])
 
-      zobjects.each do |zobject|
-       print_zobject(zobject)
-      end
+      zobjects = Zype::Client.new.zobjects.all(options[:schema],params)
+
+      print_zobjects(zobjects)
     end
 
     desc "zobject:import", "Import CSV of Zobject records"
@@ -46,18 +53,14 @@ module Zype
       load_configuration
 
       zobject = Zype::Client.new.zobjects.create(options[:schema],options[:attributes], options[:pictures])
-      print_zobject(zobject)
+
+      print_zobjects([zobject])
     end
 
     no_commands do
 
-      def print_zobject(zobject)
-        puts "Title: #{zobject.title} (ID: #{zobject._id})"
-        puts "Attributes:"
-        zobject.keys.sort.each do |key|
-          puts "  #{key}: #{zobject[key]}"
-        end
-        puts "---"
+      def print_zobjects(zobjects)
+        puts Hirb::Helpers::Table.render(zobjects, :fields=>[:_id, :title, :description, :active])
       end
     end
   end

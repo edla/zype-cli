@@ -25,25 +25,5 @@ module Zype
         puts "---"
       end
     end
-
-    desc "video-source:create", "Create video source"
-
-    method_option "attributes", aliases: "a", type: :hash, required: true, desc: "Specify video source attributes"
-
-    define_method "video_source:create" do
-      load_configuration
-
-      puts Zype::Client.new.video_sources.create(options[:attributes])
-    end
-
-    desc "video-source:destroy", "Destroy video source"
-
-    method_option "id", aliases: "i", type: :string, required: true, desc: "Video source ID"
-
-    define_method "video_source:destroy" do
-      load_configuration
-
-      puts Zype::Client.new.video_sources.find(options[:id]).destroy
-    end
   end
 end
