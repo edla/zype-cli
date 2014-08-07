@@ -39,9 +39,9 @@ Gem::Specification.new do |s|
     "lib/zype/models/zobject_schemas.rb",
     "lib/zype/models/zobject.rb",
     "lib/zype/models/zobjects.rb",
-    "lib/zype/multipart.rb",
     "lib/zype/file_reader.rb",
-    "lib/zype/progress_bar.rb"
+    "lib/zype/progress_bar.rb",
+    "lib/zype/uploader.rb"
   ]
 
   s.executables = [

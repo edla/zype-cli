@@ -1,7 +1,6 @@
 require "thor"
 require 'zype/progress_bar'
-require 'zype/file_reader'
-require 'zype/multipart'
+require 'zype/uploader'
 
 module Zype
   class Commands < Thor
@@ -65,12 +64,6 @@ module Zype
     define_method "video:upload" do
       init_client
 
-      uploads = []
-
-      if filename = options[:filename]
-        uploads << upload_video(filename)
-      end
-
       filenames = []
 
       if filename = options[:filename]
@@ -96,7 +89,7 @@ module Zype
       def upload_and_transcode_video(filename,options)
         upload = upload_video(filename)
         if upload.status == 'complete'
-          #transcode_video(upload, title: options[:title] || upload.filename, keywords: options[:keywords])
+          transcode_video(upload, title: options[:title] || upload.filename, keywords: options[:keywords])
         end
       end
 
@@ -112,13 +105,11 @@ module Zype
         upload = @zype.uploads.create(filename: basename, filesize: file.size)
 
         begin
-          multipart = Zype::Multipart.new(upload, file)
-          multipart.process
+          uploader = Zype::Uploader.new(@zype)
+          uploader.process(upload,file)
 
           upload.progress = 100
           upload.status = 'complete'
-
-
         rescue Interrupt => e
           puts "Upload Cancelled"
           upload.status = 'cancelled'
@@ -132,8 +123,6 @@ module Zype
         puts ""
         upload
       end
-
     end
-
   end
 end
