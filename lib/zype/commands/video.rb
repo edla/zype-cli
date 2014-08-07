@@ -15,9 +15,9 @@ module Zype
     method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
 
     define_method "video:list" do
-      load_configuration
+      init_client
 
-      videos = Zype::Client.new.videos.all(
+      videos = @zype.videos.all(
         :q => options[:query],
         :category => options[:category],
         :active => options[:active],
@@ -38,9 +38,9 @@ module Zype
     method_option "keywords", aliases: "k", type: :array, desc: "New video keywords"
 
     define_method "video:update" do
-      load_configuration
+      init_client
 
-      if video = Zype::Client.new.videos.find(options[:id])
+      if video = @zype.videos.find(options[:id])
         video.title = options[:title] unless options[:title].nil?
         video.keywords = options[:keywords] unless options[:keywords].nil?
         video.active = options[:active] unless options[:active].nil?
@@ -64,7 +64,7 @@ module Zype
     method_option "chunksize", aliases: "c", type: :numeric, default: 512, desc: "Chunk size (KB)"
 
     define_method "video:upload" do
-      load_configuration
+      init_client
 
       uploads = []
 
@@ -102,7 +102,7 @@ module Zype
       end
 
       def transcode_video(upload,options={})
-        Zype::Client.new.videos.create(options.merge(upload_id: upload["_id"]))
+        @zype.videos.create(options.merge(upload_id: upload["_id"]))
       end
 
       def upload_video(filename)
@@ -110,7 +110,7 @@ module Zype
         basename = File.basename(filename)
         size = options[:chunksize]  * 1024
 
-        upload = Zype::Client.new.uploads.create(filename: basename, filesize: file.size)
+        upload = @zype.uploads.create(filename: basename, filesize: file.size)
 
         begin
           uri = URI.parse(upload["upload_url"])

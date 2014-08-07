@@ -11,9 +11,9 @@ module Zype
     method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
 
     define_method "playlist:list" do
-      load_configuration
+      init_client
 
-      playlists = Zype::Client.new.playlists.all(
+      playlists = @zype.playlists.all(
         :q => options[:query],
         :category => options[:category],
         :active => options[:active],
@@ -31,10 +31,10 @@ module Zype
     method_option "per_page",   aliases: "s", type: :numeric, default: 10, desc: "Number of results to return"
 
     define_method "playlist:videos" do
-      load_configuration
+      init_client
 
       begin
-        playlist = Zype::Client.new.playlists.find(options[:id])
+        playlist = @zype.playlists.find(options[:id])
 
         videos = playlist.videos(
           :page => options[:page],

@@ -9,7 +9,7 @@ module Zype
     method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
 
     define_method "zobject_schema:list" do
-      load_configuration
+      init_client
 
       zobject_schemas = Zype::Client.new.zobject_schemas.all(
         :q => options[:query],
@@ -25,7 +25,7 @@ module Zype
     method_option "attributes", aliases: "a", type: :hash, required: true, desc: "Specify schema attributes"
 
     define_method "zobject_schema:create" do
-      load_configuration
+      init_client
 
       puts Zype::Client.new.zobject_schemas.create(options[:attributes])
     end

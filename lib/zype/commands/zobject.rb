@@ -13,7 +13,7 @@ module Zype
     method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
 
     define_method "zobject:list" do
-      load_configuration
+      init_client
 
       params = {
         :q => options[:query],
@@ -25,7 +25,7 @@ module Zype
 
       params.merge!(options[:filters])
 
-      zobjects = Zype::Client.new.zobjects.all(options[:schema],params)
+      zobjects = @zype.zobjects.all(options[:schema],params)
 
       print_zobjects(zobjects)
     end
@@ -35,9 +35,9 @@ module Zype
     method_option "filename", aliases: "f", aliases: "f", type: :string, required: true, desc: "File path to upload"
 
     define_method "zobject:import" do
-      load_configuration
+      init_client
       filename = options[:filename]
-      records = Zype::Client.new.zobjects.import(options[:schema], filename)
+      records = @zype.zobjects.import(options[:schema], filename)
       puts records.body
     end
 
@@ -50,9 +50,9 @@ module Zype
     method_option "pictures", aliases: ["p"], type: :hash, required: false, desc: "Specify pictures hash"
 
     define_method "zobject:create" do
-      load_configuration
+      init_client
 
-      zobject = Zype::Client.new.zobjects.create(options[:schema],options[:attributes], options[:pictures])
+      zobject = @zype.zobjects.create(options[:schema],options[:attributes], options[:pictures])
 
       print_zobjects([zobject])
     end
