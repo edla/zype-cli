@@ -11,18 +11,18 @@ require File.join(File.dirname(__FILE__), 'zype', 'model')
 module Zype
 
   class << self
-    
+
     # The configuration object.
     # @see Zype.configure
     def configuration
       @configuration ||= Configuration.new
     end
-    
-    # Allows configuration object to be set 
+
+    # Allows configuration object to be set
     def configuration=(new_configuration)
       @configuration = new_configuration
     end
-  
+
     # Call this method to modify defaults in your initializers.
     #
     # @example
@@ -33,6 +33,6 @@ module Zype
     def configure
       yield(configuration)
     end
-    
+
   end
 end

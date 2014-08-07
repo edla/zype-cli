@@ -3,7 +3,10 @@ module Zype
     def save
       res = service.put("/videos/#{self['_id']}", video: {
         title: title,
-        keywords: keywords
+        keywords: keywords,
+        active: active,
+        featured: featured,
+        description: description
       })
 
       merge(res)

@@ -2,7 +2,6 @@ require 'aws-sdk'
 require 'thread'
 require 'thwait'
 require 'pry'
-require 'zype/aws'
 
 module Zype
   class Multipart

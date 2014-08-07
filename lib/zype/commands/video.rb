@@ -1,4 +1,4 @@
-require 'thor'
+require "thor"
 require 'zype/progress_bar'
 require 'zype/file_reader'
 require 'zype/multipart'
@@ -7,38 +7,47 @@ module Zype
   class Commands < Thor
     desc "video:list", "List videos"
 
-    method_option "filters", aliases: "f", type: :hash,    default: {}, desc: "Specify video filters"
-    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Specify the page of videos to return"
-    method_option "count",   aliases: "c", type: :numeric, default: 10, desc: "Specify the number of videos to return"
+    method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
+    method_option "category", aliases: "c", type: :hash, desc: "Optional category filters"
+    method_option "active", aliases: "a", type: :string, default: 'true', desc: "Show active (true), inactive (false) or all (all) videos"
+    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
+    method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
 
     define_method "video:list" do
-      load_configuration
+      init_client
 
-      videos = Zype::Client.new.videos.all(options[:filters], options[:page], options[:count])
+      videos = @zype.videos.all(
+        :q => options[:query],
+        :category => options[:category],
+        :active => options[:active],
+        :page => options[:page],
+        :per_page => options[:per_page]
+      )
 
-      puts "Found #{videos.size} video(s)"
-      puts "---"
-
-      videos.each do |video|
-        print_video(video)
-      end
+      print_videos(videos)
     end
 
     desc "video:update", "Update a video"
 
     method_option "id", aliases: "i", type: :string, required: true, desc: "The video to update"
-
+    method_option "active", aliases: "a", type: :boolean, desc: "New video status"
+    method_option "featured", aliases: "f", type: :boolean, desc: "New featured status"
     method_option "title", aliases: "t", type: :string, desc: "New video title"
+    method_option "description", aliases: "d", type: :string, desc: "New video description"
     method_option "keywords", aliases: "k", type: :array, desc: "New video keywords"
 
     define_method "video:update" do
-      load_configuration
+      init_client
 
-      if video = Zype::Client.new.videos.find(options[:id])
-        video.title = options[:title] if options[:title]
-        video.keywords = options[:keywords] if options[:keywords]
+      if video = @zype.videos.find(options[:id])
+        video.title = options[:title] unless options[:title].nil?
+        video.keywords = options[:keywords] unless options[:keywords].nil?
+        video.active = options[:active] unless options[:active].nil?
+        video.featured = options[:featured] unless options[:featured].nil?
+        video.description = options[:description] unless options[:description].nil?
+
         video.save
-        print_video(video)
+        print_videos([video])
       end
       puts ""
     end
@@ -54,7 +63,13 @@ module Zype
     method_option "chunksize", aliases: "c", type: :numeric, default: 512, desc: "Chunk size (KB)"
 
     define_method "video:upload" do
-      load_configuration
+      init_client
+
+      uploads = []
+
+      if filename = options[:filename]
+        uploads << upload_video(filename)
+      end
 
       filenames = []
 
@@ -74,13 +89,8 @@ module Zype
 
     no_commands do
 
-      def print_video(video)
-        puts "Title: #{video.title} (ID: #{video._id})"
-        puts "Attributes:"
-        video.keys.sort.each do |key|
-          puts "  #{key}: #{video[key]}"
-        end
-        puts "---"
+      def print_videos(videos)
+        puts Hirb::Helpers::Table.render(videos, :fields=>[:_id, :title, :description, :duration, :status, :active])
       end
 
       def upload_and_transcode_video(filename,options)
@@ -91,7 +101,7 @@ module Zype
       end
 
       def transcode_video(upload,options={})
-        Zype::Client.new.videos.create(options.merge(upload_id: upload["_id"]))
+        @zype.videos.create(options.merge(upload_id: upload["_id"]))
       end
 
       def upload_video(filename)
@@ -99,7 +109,7 @@ module Zype
         basename = File.basename(filename)
         size = options[:chunksize]  * 1024
 
-        upload = Zype::Client.new.uploads.create(filename: basename, filesize: file.size)
+        upload = @zype.uploads.create(filename: basename, filesize: file.size)
 
         begin
           multipart = Zype::Multipart.new(upload, file)
