@@ -114,9 +114,9 @@ module Zype
           puts "Upload Cancelled"
           upload.status = 'cancelled'
         rescue Exception => e
-          puts "Error: ##{e.message}"
           upload.status = 'error'
           upload.message = "Error: ##{e.message}"
+          raise
         ensure
           upload.save
         end

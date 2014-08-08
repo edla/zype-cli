@@ -9,7 +9,6 @@ module Zype
       puts "#{e.class}: #{e.message}. Please run 'zype configure' to configure your API key"
     rescue Exception => e
       puts "#{e.class}: #{e.message}"
-      raise
     end
 
     def self.configure

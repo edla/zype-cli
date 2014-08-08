@@ -10,9 +10,9 @@ module Zype
       @block = block
     end
 
-    def read(length)
+    def read(*args)
       if @file
-        chunk = @file.read(length)
+        chunk = @file.read(*args)
         @block.call(self) if @block
         chunk
       end
