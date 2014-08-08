@@ -2,49 +2,24 @@ Gem::Specification.new do |s|
   s.name        = 'zype'
   s.version     = '0.0.0'
   s.date        = '2014-03-20'
-  s.summary     = "Command line interface to interact with Zype API"
+  s.summary     = "Zype Platform Client/CLI"
+  s.description = "Client library and CLI to interact with the Zype Platform API"
   s.authors     = ["Brian Dorry"]
   s.email       = 'bdorry@zypemedia.com'
   s.homepage    =
     'http://rubygems.org/gems/zype'
   s.license       = 'MIT'
-  s.files = [
-    "Gemfile",
-    "Gemfile.lock",
-    "bin/zype",
-    "lib/zype.rb",
-    "lib/zype/auth.rb",
-    "lib/zype/cli.rb",
-    "lib/zype/client.rb",
-    "lib/zype/collection.rb",
-    "lib/zype/commands.rb",
-    "lib/zype/commands/account.rb",
-    "lib/zype/commands/playlist.rb",
-    "lib/zype/commands/video.rb",
-    "lib/zype/commands/zobject.rb",
-    "lib/zype/commands/zobject_schema.rb",
-    "lib/zype/configuration.rb",
-    "lib/zype/helpers.rb",
-    "lib/zype/model.rb",
-    "lib/zype/models/account.rb",
-    "lib/zype/models/playlist.rb",
-    "lib/zype/models/playlists.rb",
-    "lib/zype/models/video_source.rb",
-    "lib/zype/models/video_sources.rb",
-    "lib/zype/models/upload.rb",
-    "lib/zype/models/uploads.rb",
-    "lib/zype/models/video.rb",
-    "lib/zype/models/videos.rb",
-    "lib/zype/models/zobject_schema.rb",
-    "lib/zype/models/zobject_schemas.rb",
-    "lib/zype/models/zobject.rb",
-    "lib/zype/models/zobjects.rb",
-    "lib/zype/file_reader.rb",
-    "lib/zype/progress_bar.rb",
-    "lib/zype/uploader.rb"
-  ]
+
+  s.files = `git ls-files`.split("\n")
 
   s.executables = [
     "zype"
   ]
+
+  s.add_dependency('aws-sdk', '~> 1.50')
+  s.add_dependency('multi_json', '~> 1.9')
+  s.add_dependency('hashie', '~> 2.0')
+  s.add_dependency('thor', '~> 0.19')
+  s.add_dependency('rainbow', '~> 2.0')
+  s.add_dependency('hirb', '~> 0.7')
 end

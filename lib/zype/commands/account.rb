@@ -4,7 +4,7 @@ require "yaml"
 module Zype
   class Commands < Thor
 
-    desc "login", "Enter credentials"
+    desc "account:login", "Enter credentials"
     define_method "account:login" do
       Zype::Auth.delete_configuration
       Zype::Auth.load_configuration
