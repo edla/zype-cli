@@ -23,8 +23,8 @@ module Zype
     end
 
     def initialize
-      @host = 'api.zype-core.com'
-      @port = 3000
+      @host = 'api.zype.com'
+      @port = 80
       @use_ssl = false
     end
 
