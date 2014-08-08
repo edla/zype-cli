@@ -4,12 +4,18 @@ require "yaml"
 module Zype
   class Commands < Thor
 
-    desc "account:logout", "Delete stored credentials"
+    desc "login", "Enter credentials"
+    define_method "account:login" do
+      Zype::Auth.delete_configuration
+      Zype::Auth.load_configuration
+    end
+
+    desc "account:logout", "Delete credentials"
     define_method "account:logout" do
       Zype::Auth.delete_configuration
     end
 
-    desc "account:list", "Display account information"
+    desc "account:list", "Display account details"
     define_method "account:list" do
       init_client
 

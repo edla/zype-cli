@@ -1,16 +1,21 @@
-require "thor"
+require 'thor'
 
 module Zype
   class Commands < Thor
-    desc "playlist:list", "List playlists"
+    desc 'playlist:list', 'List playlists'
 
-    method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
-    method_option "category", aliases: "c", type: :hash, desc: "Optional category filters"
-    method_option "active", aliases: "a", type: :string, default: 'true', desc: "Show active (true), inactive (false) or all (all) playlists"
-    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
-    method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
+    method_option 'query', desc: 'Playlist search terms',
+                  aliases: 'q', type: :string
+    method_option 'category', desc: 'Playlist category filters',
+                  aliases: 'c', type: :hash
+    method_option 'active', desc: 'Show active, inactive or all playlists',
+                  aliases: 'a', type: :string, default: 'true', enum: ['true','false','all']
+    method_option 'page', desc: 'The page of playlists to return',
+                  aliases: 'p', type: :numeric, default: 0
+    method_option 'per_page', desc: 'The number of playlists to return',
+                  aliases: 's', type: :numeric, default: 25
 
-    define_method "playlist:list" do
+    define_method 'playlist:list' do
       init_client
 
       playlists = @zype.playlists.all(
@@ -24,13 +29,16 @@ module Zype
       print_playlists(playlists)
     end
 
-    desc "playlist:videos", "List playlist videos"
+    desc 'playlist:videos', 'List playlist videos'
 
-    method_option "id", aliases: "i", type: :string, required: true, desc: "Playlist ID"
-    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
-    method_option "per_page",   aliases: "s", type: :numeric, default: 10, desc: "Number of results to return"
+    method_option 'id', desc: 'Playlist ID',
+                  aliases: 'i', type: :string, required: true
+    method_option 'page', desc: 'The page of videos to return',
+                  aliases: 'p', type: :numeric, default: 0
+    method_option 'per_page', desc: 'The number of videos to return',
+                  aliases: 's', type: :numeric, default: 10
 
-    define_method "playlist:videos" do
+    define_method 'playlist:videos' do
       init_client
 
       begin

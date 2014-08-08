@@ -1,15 +1,18 @@
-require "thor"
+require 'thor'
 
 module Zype
   class Commands < Thor
 
-    desc "zobject-schema:list", "List Zobject schemas"
+    desc 'zobject-schema:list', 'List Zobject schemas'
 
-    method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
-    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
-    method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
+    method_option 'query', desc: 'Zobject schema search terms',
+                  aliases: 'q', type: :string
+    method_option 'page', desc: 'The page of zobject schemas to return',
+                  aliases: 'p', type: :numeric, default: 0
+    method_option 'per_page', desc: 'The number of zobject schemas to return',
+                  aliases: 's', type: :numeric, default: 25
 
-    define_method "zobject_schema:list" do
+    define_method 'zobject_schema:list' do
       init_client
 
       zobject_schemas = Zype::Client.new.zobject_schemas.all(
@@ -21,14 +24,15 @@ module Zype
       print_zobject_schemas(zobject_schemas)
     end
 
-    desc "zobject-schema:create", "Create Zobject schemas"
+    desc 'zobject-schema:create', 'Create Zobject schemas'
 
-    method_option "attributes", aliases: "a", type: :hash, required: true, desc: "Specify schema attributes"
+    method_option 'attributes', aliases: 'a', type: :hash, required: true, desc: 'Zobject schema attributes'
 
-    define_method "zobject_schema:create" do
+    define_method 'zobject_schema:create' do
       init_client
 
-      puts Zype::Client.new.zobject_schemas.create(options[:attributes])
+      zobject_schema = Zype::Client.new.zobject_schemas.create(options[:attributes])
+      print_zobject_schemas([zobject_schema])
     end
 
     no_commands do

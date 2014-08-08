@@ -1,18 +1,24 @@
-require "thor"
+require 'thor'
 require 'zype/file_reader'
 
 module Zype
   class Commands < Thor
-    desc "zobject:list", "List Zobjects"
+    desc 'zobject:list', 'List Zobjects'
 
-    method_option "schema",  aliases: "s", type: :string,  required: true, desc: "Zobject schema title"
-    method_option "query", aliases: "q", type: :string, desc: "Playlist search terms"
-    method_option "filters", aliases: "f", type: :hash,    default: {}, desc: "Zobject query filters"
-    method_option "active", aliases: "a", type: :string, default: 'true', desc: "Show active (true), inactive (false) or all (all) zobjects"
-    method_option "page",    aliases: "p", type: :numeric, default: 0,  desc: "Page number to return"
-    method_option "per_page",   aliases: "s", type: :numeric, default: 25, desc: "Number of results to return"
+    method_option 'schema', desc: 'Zobject schema title',
+                  aliases: 's', type: :string,  required: true
+    method_option 'query', desc: 'Zobject search terms',
+                  aliases: 'q', type: :string
+    method_option 'filters', desc: 'Zobject query filters',
+                  aliases: 'f', type: :hash, default: {}
+    method_option 'active', desc: 'Show active, inactive or all zobjects',
+                  aliases: 'a', type: :string, default: 'true', enum: ['true','false','all']
+    method_option 'page', desc: 'The page of zobjects to return',
+                  aliases: 'p', type: :numeric, default: 0
+    method_option 'per_page', desc: 'The number of zobjects to return',
+                  aliases: 's', type: :numeric, default: 25
 
-    define_method "zobject:list" do
+    define_method 'zobject:list' do
       init_client
 
       params = {
@@ -30,26 +36,13 @@ module Zype
       print_zobjects(zobjects)
     end
 
-    desc "zobject:import", "Import CSV of Zobject records"
-    method_option "schema", aliases: "s", type: :string,  required: true, desc: "Zobject schema title"
-    method_option "filename", aliases: "f", aliases: "f", type: :string, required: true, desc: "File path to upload"
+    desc 'zobject:create', 'Create Zobjects'
 
-    define_method "zobject:import" do
-      init_client
-      filename = options[:filename]
-      records = @zype.zobjects.import(options[:schema], filename)
-      puts records.body
-    end
+    method_option 'schema',     aliases: ['s'], type: :string, required: true, desc: 'Specify zobject schema'
+    method_option 'attributes', aliases: ['a'], type: :hash, required: false, desc: 'Specify zobject attributes'
+    method_option 'pictures', aliases: ['p'], type: :hash, required: false, desc: 'Specify pictures hash'
 
-
-
-    desc "zobject:create", "Create Zobjects"
-
-    method_option "schema",     aliases: ["s"], type: :string, required: true, desc: "Specify zobject schema"
-    method_option "attributes", aliases: ["a"], type: :hash, required: true, desc: "Specify schema attributes"
-    method_option "pictures", aliases: ["p"], type: :hash, required: false, desc: "Specify pictures hash"
-
-    define_method "zobject:create" do
+    define_method 'zobject:create' do
       init_client
 
       zobject = @zype.zobjects.create(options[:schema],options[:attributes], options[:pictures])

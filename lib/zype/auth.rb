@@ -32,6 +32,8 @@ module Zype
         configuration = ask_for_configuration
 
         write_configuration(configuration)
+
+        configuration
       end
 
       def ask_for_configuration
