@@ -1,4 +1,3 @@
-require 'pry-debugger'
 module Zype
   class Auth
     extend Zype::Helpers
