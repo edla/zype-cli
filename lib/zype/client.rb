@@ -4,6 +4,7 @@ module Zype
   class Client
 
     class NoApiKey < StandardError; end
+    class NoUploadKey < StandardError; end
     class NotFound < StandardError; end
     class ServerError < StandardError; end
     class ImATeapot < StandardError; end

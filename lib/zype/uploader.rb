@@ -16,6 +16,10 @@ module Zype
     def init_aws_client
       account = @client.account
 
+      unless account.upload_key && account.upload_secret
+        raise Zype::Client::NoUploadKey, "Upload credentials not found"
+      end
+
       @aws = AWS::S3.new(
         access_key_id: account.upload_key,
         secret_access_key: account.upload_secret
