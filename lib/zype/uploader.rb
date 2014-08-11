@@ -29,8 +29,19 @@ module Zype
     def process(upload,file)
       progress_bar = Zype::ProgressBar.new(upload["filename"], file.size)
 
+      upload.status = 'uploading'
+      last_check = Time.now
+
       file = Zype::FileReader.new(file) do |reader|
         progress_bar.set(reader.pos)
+
+        if last_check < Time.now - 10 # seconds
+          progress = (file.pos.to_f / file.size * 100).floor
+
+          update_progress(upload,progress)
+
+          last_check = Time.now
+        end
       end
 
       uri = URI.parse(upload.path)
@@ -39,6 +50,15 @@ module Zype
       object = bucket.objects[upload.path]
 
       object.write(file, :multipart_min_part_size => MULTIPART_MINIMUM)
+    end
+
+  private
+
+    def update_progress(upload,progress)
+      upload.progress = progress
+      upload.save
+    rescue Exception
+      # catch exceptions on periodic checkins
     end
   end
 end
