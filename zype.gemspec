@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'zype'
-  s.version     = '0.0.0'
+  s.version     = '1.0.0'
   s.date        = '2014-03-20'
   s.summary     = "Zype Platform Client/CLI"
   s.description = "Client library and CLI to interact with the Zype Platform API"
