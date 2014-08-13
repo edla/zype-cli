@@ -86,7 +86,7 @@ module Zype
     no_commands do
 
       def print_videos(videos)
-        puts Hirb::Helpers::Table.render(videos, :fields=>[:_id, :title, :description, :duration, :status, :active])
+        puts Hirb::Helpers::Table.render(videos, :fields=>[:_id, :title, :description, :filename, :duration, :status, :active])
       end
 
       def upload_and_transcode_video(filename,options)

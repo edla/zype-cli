@@ -62,7 +62,7 @@ module Zype
       end
 
       def print_videos(videos)
-        puts Hirb::Helpers::Table.render(videos, :fields=>[:_id, :title, :description, :duration, :status, :active])
+        puts Hirb::Helpers::Table.render(videos, :fields=>[:_id, :title, :description, :filename, :duration, :status, :active])
       end
     end
   end
