@@ -89,14 +89,14 @@ module Zype
     model :upload
     model :video
     model :video_source
-    model :zobject_schema
+    model :zobject_type
     model :zobject
     model :playlist
 
     collection :uploads
     collection :videos
     collection :video_sources
-    collection :zobject_schemas
+    collection :zobject_types
     collection :zobjects
     collection :playlists
 
