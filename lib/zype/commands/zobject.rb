@@ -6,10 +6,12 @@ module Zype
     desc 'zobject:list', 'List Zobjects'
 
     method_option 'zobject_type', desc: 'Zobject type title',
-                  aliases: 's', type: :string,  required: true
+                  aliases: 's', type: :string, required: true
     method_option 'query', desc: 'Zobject search terms',
                   aliases: 'q', type: :string
-    method_option 'filters', desc: 'Zobject query filters',
+    method_option 'video_id', desc: 'Show zobjects related to videos',
+                  aliases: 'v', type: :array
+    method_option 'filters', desc: 'Zobject filters for custom attributes',
                   aliases: 'f', type: :hash, default: {}
     method_option 'active', desc: 'Show active, inactive or all zobjects',
                   aliases: 'a', type: :string, default: 'true', enum: ['true','false','all']
@@ -23,7 +25,7 @@ module Zype
 
       params = {
         :q => options[:query],
-        :category => options[:category],
+        :video_id => options[:video_id],
         :active => options[:active],
         :page => options[:page],
         :per_page => options[:per_page]
@@ -50,10 +52,36 @@ module Zype
       print_zobjects([zobject])
     end
 
+    desc 'zobject:videos', 'List zobject videos'
+
+    method_option 'id', desc: 'Zobject ID',
+                  aliases: 'i', type: :string, required: true
+    method_option 'active', desc: 'Show active, inactive or all videos',
+                  aliases: 'a', type: :string, default: 'true', enum: ['true','false','all']
+    method_option 'page', desc: 'The page of videos to return',
+                  aliases: 'p', type: :numeric, default: 0
+    method_option 'per_page', desc: 'The number of videos to return',
+                  aliases: 's', type: :numeric, default: 25
+
+    define_method 'zobject:videos' do
+      init_client
+
+      params = {
+        :zobject_id => options[:id],
+        :active => options[:active],
+        :page => options[:page],
+        :per_page => options[:per_page]
+      }
+
+      videos = @zype.videos.all(params)
+
+      print_videos(videos)
+    end
+
     no_commands do
 
       def print_zobjects(zobjects)
-        puts Hirb::Helpers::Table.render(zobjects, :fields=>[:_id, :title, :description, :active])
+        puts Hirb::Helpers::Table.render(zobjects, :fields=>[:_id, :title, :zobject_type_title, :description, :active])
       end
     end
   end
