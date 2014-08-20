@@ -8,6 +8,9 @@ module Zype
 
     method_option 'query', desc: 'Video search terms',
                   aliases: 'q', type: :string
+    method_option 'type', desc: 'Show videos of the specified type',
+                  aliases: 't', type: :string, enum: ['zype','hulu','youtube']
+
     method_option 'category', desc: 'Video category filters',
                   aliases: 'c', type: :hash
     method_option 'active', desc: 'Show active, inactive or all videos',
@@ -22,6 +25,7 @@ module Zype
 
       videos = @zype.videos.all(
         :q => options[:query],
+        :type => options[:type],
         :category => options[:category],
         :active => options[:active],
         :page => options[:page],
