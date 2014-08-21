@@ -86,6 +86,7 @@ module Zype
     model_path 'zype/models'
 
     model :account
+    model :category
     model :upload
     model :video
     model :video_source
@@ -93,6 +94,7 @@ module Zype
     model :zobject
     model :playlist
 
+    collection :categories
     collection :uploads
     collection :videos
     collection :video_sources

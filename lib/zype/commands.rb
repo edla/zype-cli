@@ -2,6 +2,7 @@ require 'hirb'
 require "thor"
 require 'zype/auth'
 require "zype/commands/account"
+require "zype/commands/category"
 require "zype/commands/playlist"
 require "zype/commands/video"
 require "zype/commands/zobject"
