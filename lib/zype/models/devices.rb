@@ -1,13 +1,14 @@
 module Zype
   class Devices < Zype::Collection
-    model Device
+    model Devices
 
-    def all(device, params)
+    def all(params={})
       load(service.get('/devices', params))
     end
 
-    def find(device, id)
+    def find(id)
       load(service.get("/devices/#{id}"))
     end
+
   end
 end

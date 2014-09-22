@@ -101,6 +101,9 @@ module Zype
     collection :zobject_types
     collection :zobjects
     collection :playlists
+    collection :device_categories
+    collection :devices
+
 
     def account
       Zype::Account.new(get('/account')['response'])
