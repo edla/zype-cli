@@ -62,7 +62,7 @@ module Zype
       if category = @zype.categories.find(options[:id])
         category.title = options[:title] unless options[:title].nil?
         category.values = options[:values] unless options[:values].nil?
-      
+
         category.save
         print_categories([category])
       end
