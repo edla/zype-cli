@@ -1,6 +1,6 @@
 module Zype
   class Devices < Zype::Collection
-    model Devices
+    model Device
 
     def all(params={})
       load(service.get('/devices', params))

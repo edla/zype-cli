@@ -14,13 +14,13 @@ module Zype
     define_method 'device:list' do
       init_client
 
-      devices = @zype.devices.all(
+      device = @zype.devices.all(
         :q => options[:query],
         :page => options[:page],
         :per_page => options[:per_page]
       )
 
-      print_devices(devices)
+      print_devices(device)
     end
 
     desc 'device:find', 'Find a device by ID'
@@ -44,6 +44,7 @@ module Zype
     no_commands do
 
       def print_devices(devices)
+        # binding.pry
         puts Hirb::Helpers::Table.render(devices, :fields=>[:_id, :name, :description])
       end
     end

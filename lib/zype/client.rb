@@ -87,22 +87,27 @@ module Zype
 
     model :account
     model :category
+    model :device
+    model :device_category
+    model :playlist
+    model :revenue_model
     model :upload
     model :video
     model :video_source
     model :zobject_type
     model :zobject
-    model :playlist
 
     collection :categories
+    collection :devices
+    collection :device_categories
+    collection :revenue_models
+    collection :playlists
     collection :uploads
     collection :videos
     collection :video_sources
     collection :zobject_types
     collection :zobjects
-    collection :playlists
-    collection :device_categories
-    collection :devices
+
 
 
     def account
@@ -123,6 +128,7 @@ module Zype
       response = http.start {|h| h.request(request)}
 
       handle_response(response)
+
     end
 
     def post(path,params={})
