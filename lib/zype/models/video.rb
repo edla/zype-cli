@@ -13,7 +13,7 @@ module Zype
     end
 
     def player(options = {})
-      service.get("/videos/#{self['_id']}/player", options)["response"]["body"]
+      service.get("/videos/#{self['_id']}/player", options)["response"]
     end
   end
 end
