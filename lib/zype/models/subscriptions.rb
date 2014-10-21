@@ -10,5 +10,8 @@ module Zype
       load(service.get("/subscriptions/#{id}"))
     end
 
+    def create(attributes={})
+      load(service.post("/subscriptions", subscription: attributes))
+    end
   end
 end

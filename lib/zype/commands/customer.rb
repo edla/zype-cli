@@ -6,8 +6,6 @@ module Zype
 
     method_option 'query', desc: 'Customer search terms',
                   aliases: 'q', type: :string
-    method_option 'type', desc: 'Show customers of the specified type',
-                  aliases: 't', type: :string, enum: ['stripe']  
     method_option 'page', desc: 'The page of customers to return',
                   aliases: 'p', type: :numeric, default: 0
     method_option 'per_page', desc: 'The number of customers to return',
@@ -18,7 +16,6 @@ module Zype
 
       customer = @zype.customers.all(
         :q => options[:query],
-        :type => options[:type],
         :active => options[:active],
         :page => options[:page],
         :per_page => options[:per_page]
@@ -27,11 +24,25 @@ module Zype
       print_customers(customer)
     end
 
+    desc 'customer:create', 'Create Customers'
+
+    method_option 'email', aliases: 'e', type: :string, desc: 'Customer email'
+    
+    define_method 'customer:create' do
+      init_client
+
+      customer = Zype::Client.new.customers.create(
+        email: options[:email]
+      )
+
+      print_customers([customer])
+    end
+
     no_commands do
 
       def print_customers(customers)
         # binding.pry
-        puts Hirb::Helpers::Table.render(customers, :fields=>[:_id, :email])
+        puts Hirb::Helpers::Table.render(customers, :fields=>[:_id, :email, :subscription_count, :card_count, :created_at])
       end
     end
   end

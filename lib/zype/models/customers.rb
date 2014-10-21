@@ -10,5 +10,8 @@ module Zype
       load(service.get("/customers/#{id}"))
     end
 
+    def create(attributes={})
+      load(service.post("/customers", customer: attributes))
+    end
   end
 end
