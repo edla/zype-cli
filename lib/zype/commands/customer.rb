@@ -27,7 +27,7 @@ module Zype
     desc 'customer:create', 'Create Customers'
 
     method_option 'email', aliases: 'e', type: :string, desc: 'Customer email'
-    
+
     define_method 'customer:create' do
       init_client
 
@@ -42,7 +42,7 @@ module Zype
 
       def print_customers(customers)
         # binding.pry
-        puts Hirb::Helpers::Table.render(customers, :fields=>[:_id, :email, :subscription_count, :card_count, :created_at])
+        puts Hirb::Helpers::Table.render(customers, :fields=>[:_id, :email, :subscription_count, :card_count, :video_favorites, :created_at])
       end
     end
   end
