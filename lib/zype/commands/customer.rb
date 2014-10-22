@@ -58,13 +58,26 @@ module Zype
 
     define_method 'customer:favorite_video' do
       init_client
-# video_id to favorite 5446c9464c616e382b080000
+
       customer = @zype.customers.find(options[:customer_id])
       customer.favorite_video(options[:video_id])
 
-      puts 'video favorited'
+      puts 'video favorited :)'
     end
 
+    desc 'customer:unfavorite_video', 'Customer Unfavorites a video'
+
+    method_option 'customer_id', aliases: 'i', type: :string, required: true, desc: 'Customer ID'
+    method_option 'video_id', aliases: 'v', type: :string, required: true, desc: 'Video ID'
+
+    define_method 'customer:unfavorite_video' do
+      init_client
+
+      customer = @zype.customers.find(options[:customer_id])
+      customer.unfavorite_video(options[:video_id])
+
+      puts 'video unfavorited :('
+    end
 
     no_commands do
 

@@ -11,9 +11,9 @@ module Zype
     end
 
     def unfavorite_video(video_id=nil)
-      binding.pry
-      # Use the video_id and customer_id to get the video_favorite_id
-      service.delete("/customers/#{self['id']}/video_favorites/#{video_favorite_id}")
+      video_favorite = video_favorites.find(video_id: video_id).first
+      
+      service.delete("/customers/#{self['_id']}/video_favorites/#{video_favorite['_id']}")
     end
   end
 end
