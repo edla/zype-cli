@@ -86,6 +86,7 @@ module Zype
     model_path 'zype/models'
 
     model :account
+    model :card
     model :category
     model :customer
     model :device
@@ -100,6 +101,7 @@ module Zype
     model :zobject_type
     model :zobject
 
+    collection :cards
     collection :categories
     collection :customers
     collection :devices
