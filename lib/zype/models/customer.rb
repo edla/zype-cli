@@ -1,4 +1,3 @@
-require 'pry'
 module Zype
   class Customer < Zype::Model
 
@@ -12,7 +11,7 @@ module Zype
 
     def unfavorite_video(video_id=nil)
       video_favorite = video_favorites.find(video_id: video_id).first
-      
+
       service.delete("/customers/#{self['_id']}/video_favorites/#{video_favorite['_id']}")
     end
   end
