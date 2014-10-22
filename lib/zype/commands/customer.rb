@@ -51,6 +51,20 @@ module Zype
       print_video_favorites(customer['video_favorites'])
     end
 
+    desc 'customer:favorite_video', 'Customer Favorites Video'
+
+    method_option 'customer_id', aliases: 'i', type: :string, required: true, desc: 'Customer ID'
+    method_option 'video_id', aliases: 'v', type: :string, required: true, desc: 'Video ID'
+
+    define_method 'customer:favorite_video' do
+      init_client
+# video_id to favorite 5446c9464c616e382b080000
+      customer = @zype.customers.find(options[:customer_id])
+      customer.favorite_video(options[:video_id])
+
+      puts 'video favorited'
+    end
+
 
     no_commands do
 

@@ -7,7 +7,6 @@ module Zype
     end
 
     def favorite_video(video_id=nil)
-      binding.pry
       service.post("/customers/#{self['_id']}/video_favorites", video_id: video_id)
     end
 
