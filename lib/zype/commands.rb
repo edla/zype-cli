@@ -4,7 +4,7 @@ require 'zype/auth'
 require "zype/commands/account"
 require "zype/commands/card"
 require "zype/commands/category"
-require "zype/commands/customer"
+require "zype/commands/consumer"
 require "zype/commands/device"
 require "zype/commands/device_category"
 require "zype/commands/plan"

@@ -28,7 +28,7 @@ module Zype
 
     desc 'subscription:create', 'Create subscriptions'
 
-    method_option 'customer_id', aliases: 'c', type: :string, desc: 'Customer ID'
+    method_option 'consumer_id', aliases: 'c', type: :string, desc: 'consumer ID'
     method_option 'plan_id', aliases: 'p', type: :string, desc: 'Plan ID'
     
     define_method 'subscription:create' do
@@ -36,7 +36,7 @@ module Zype
 
       subscription = Zype::Client.new.subscriptions.create(
         plan_id: options[:plan_id],
-        customer_id: options[:customer_id]
+        consumer_id: options[:consumer_id]
       )
 
       print_subscriptions([subscription])
@@ -46,7 +46,7 @@ module Zype
 
       def print_subscriptions(subscriptions)
         # binding.pry
-        puts Hirb::Helpers::Table.render(subscriptions, :fields=>[:_id, :plan_id, :customer_id, :amount, :currency, :interval, :trial_period_days, :active])
+        puts Hirb::Helpers::Table.render(subscriptions, :fields=>[:_id, :plan_id, :consumer_id, :amount, :currency, :interval, :trial_period_days, :active])
       end
     end
   end

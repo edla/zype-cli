@@ -88,7 +88,7 @@ module Zype
     model :account
     model :card
     model :category
-    model :customer
+    model :consumer
     model :device
     model :device_category
     model :plan
@@ -103,7 +103,7 @@ module Zype
 
     collection :cards
     collection :categories
-    collection :customers
+    collection :consumers
     collection :devices
     collection :device_categories
     collection :plans

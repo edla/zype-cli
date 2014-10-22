@@ -4,11 +4,11 @@ Zype-CLI
 
 1. Build gem
 
-gem build zype.gemspec 
+gem build zype.gemspec
 
 2. Install gem
 
-gem install ./zype-0.0.0.gem
+gem install ./zype-1.0.0.gem
 
 == How to use
 
@@ -25,7 +25,7 @@ require 'zype'
 # For a rails application add the following under:
 # config/initializers/zype.rb
 
-Zype.configure do |config| 
+Zype.configure do |config|
   config.api_key = [your api key]
   config.host    = [host] # default: api.zype-core.com
   config.port    = [port] # default: 3000
