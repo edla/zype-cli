@@ -54,6 +54,22 @@ module Zype
       subscription.destroy
     end
 
+    desc 'subscription:update', 'Update subscription'
+
+    method_option 'subscription_id', aliases: 'i', type: :string, required: true, desc: 'subscription ID'
+    method_option 'plan_id', aliases: 'p', type: :string, desc: 'plan ID'
+
+    define_method 'subscription:update' do
+      init_client
+
+      subscription = @zype.subscriptions.find(options[:subscription_id])
+
+      subscription.plan_id = options[:plan_id] unless options[:plan_id].nil?
+      subscription.save
+
+      print_subscriptions([subscription])
+    end
+
     no_commands do
 
       def print_subscriptions(subscriptions)
