@@ -1,10 +1,8 @@
-require 'pry'
 module Zype
   class Subscription < Zype::Model
     def save
-      binding.pry
       res = service.put("/subscriptions/#{self['_id']}", subscription: {
-        # plan_id: title,
+        plan_id: plan_id
       })
 
       merge(res)
