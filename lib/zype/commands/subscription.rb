@@ -1,5 +1,5 @@
 require 'thor'
-
+require 'pry'
 module Zype
   class Commands < Thor
     desc 'subscription:list', 'List subscriptions'
@@ -7,7 +7,7 @@ module Zype
     method_option 'query', desc: 'Subscription search terms',
                   aliases: 'q', type: :string
     method_option 'active', desc: 'Show active, inactive or all videos',
-                  aliases: 'a', type: :string, default: 'true', enum: ['true','false','all']                  
+                  aliases: 'a', type: :string, default: 'true', enum: ['true','false','all']
     method_option 'page', desc: 'The page of subscriptions to return',
                   aliases: 'p', type: :numeric, default: 0
     method_option 'per_page', desc: 'The number of subscriptions to return',
@@ -30,7 +30,7 @@ module Zype
 
     method_option 'consumer_id', aliases: 'c', type: :string, desc: 'consumer ID'
     method_option 'plan_id', aliases: 'p', type: :string, desc: 'Plan ID'
-    
+
     define_method 'subscription:create' do
       init_client
 
@@ -40,6 +40,18 @@ module Zype
       )
 
       print_subscriptions([subscription])
+    end
+
+    desc 'subscription:delete', 'Delete subscription'
+
+    method_option 'subscription_id', aliases: 'i', type: :string, required: true, desc: 'subscription ID'
+
+    define_method 'subscription:delete' do
+      init_client
+
+      subscription = @zype.subscriptions.find(options[:subscription_id])
+
+      subscription.destroy
     end
 
     no_commands do
