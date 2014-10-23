@@ -7,7 +7,7 @@ module Zype
     end
 
     def find(consumer_id,id)
-      load(service.get("/consumers/#{consumer_id}/cards#{id}"))
+      load(service.get("/consumers/#{consumer_id}/cards/#{id}"))
     end
 
     def create(consumer_id,attributes={})
