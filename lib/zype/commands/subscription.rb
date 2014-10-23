@@ -1,5 +1,5 @@
 require 'thor'
-require 'pry'
+
 module Zype
   class Commands < Thor
     desc 'subscription:list', 'List subscriptions'
