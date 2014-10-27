@@ -61,12 +61,12 @@ module Zype
       consumer = @zype.consumers.find(options[:consumer_id])
       consumer.favorite_video(options[:video_id])
 
-      puts 'video favorited :)'
+      print_consumers([consumer])
     end
 
     desc 'consumer:unfavorite_video', 'Consumer Unfavorites a video'
 
-    method_option 'consumer_id', aliases: 'i', type: :string, required: true, desc: 'consumer ID'
+    method_option 'consumer_id', aliases: 'i', type: :string, required: true, desc: 'Consumer ID'
     method_option 'video_id', aliases: 'v', type: :string, required: true, desc: 'Video ID'
 
     define_method 'consumer:unfavorite_video' do
@@ -75,7 +75,22 @@ module Zype
       consumer = @zype.consumers.find(options[:consumer_id])
       consumer.unfavorite_video(options[:video_id])
 
-      puts 'video unfavorited :('
+      print_consumers([consumer])
+    end
+
+    desc 'consumer:rate_video', 'Consumer rates a video'
+
+    method_option 'consumer_id', aliases: 'i', type: :string, required: true, desc: 'Consumer ID'
+    method_option 'video_id', aliases: 'v', type: :string, required: true, desc: 'Video ID'
+    method_option 'rating', aliases: 'r', type: :numeric, required: true, desc: 'Rating (0 to 5)'
+
+    define_method 'consumer:rate_video' do
+      init_client
+
+      consumer = @zype.consumers.find(options[:consumer_id])
+      consumer.rate_video(options[:video_id], rating: options[:rating])
+
+      print_consumers([consumer])
     end
 
     no_commands do

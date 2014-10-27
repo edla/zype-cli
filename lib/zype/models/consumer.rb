@@ -14,5 +14,9 @@ module Zype
 
       service.delete("/consumers/#{self['_id']}/video_favorites/#{video_favorite['_id']}")
     end
+
+    def rate_video(video_id, attributes={})
+      service.post("/consumers/#{self['_id']}/video_ratings", video_id: video_id, rating: attributes[:rating])
+    end
   end
 end
