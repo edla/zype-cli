@@ -93,6 +93,19 @@ module Zype
       print_consumers([consumer])
     end
 
+    desc 'consumer:rated_videos', "Lists consumer's rated videos"
+
+    method_option 'consumer_id', aliases: 'i', type: :string, required: true, desc: 'Consumer ID'
+
+    define_method 'consumer:rated_videos' do
+      init_client
+
+      consumer = @zype.consumers.find(options[:consumer_id])
+      consumer.rated_videos(options[:consumer_id])
+
+      print_consumers([consumer])
+    end
+
     no_commands do
 
       def print_consumers(consumers)

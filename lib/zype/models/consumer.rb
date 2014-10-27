@@ -18,5 +18,9 @@ module Zype
     def rate_video(video_id, attributes={})
       service.post("/consumers/#{self['_id']}/video_ratings", video_id: video_id, rating: attributes[:rating])
     end
+
+    def rated_videos(options = {})
+      service.get("/consumers/#{self['_id']}/video_ratings", options)['response']
+    end
   end
 end
