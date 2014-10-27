@@ -10,7 +10,7 @@ module Zype
     end
 
     def unfavorite_video(video_id=nil)
-      video_favorite = video_favorites.find(video_id: video_id).first
+      video_favorite = video_favorites.detect{|v| v['video_id'] == video_id}
 
       service.delete("/consumers/#{self['_id']}/video_favorites/#{video_favorite['_id']}")
     end
