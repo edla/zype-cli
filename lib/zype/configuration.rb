@@ -24,8 +24,8 @@ module Zype
 
     def initialize
       @host = 'api.zype.com'
-      @port = 80
-      @use_ssl = false
+      @port = 443
+      @use_ssl = true
     end
 
     def to_yaml
