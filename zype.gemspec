@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
   s.add_dependency('thor', '~> 0.19')
   s.add_dependency('rainbow', '~> 2.0')
   s.add_dependency('hirb', '~> 0.7')
+  s.add_dependency('httparty', '~> 0.13')
 end

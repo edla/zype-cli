@@ -1,4 +1,5 @@
 require 'net/https'
+require 'httparty'
 
 module Zype
   class Client
@@ -108,7 +109,12 @@ module Zype
     collection :zobject_types
     collection :zobjects
 
+    include HTTParty
 
+    def initialize
+      @headers = { "Content-Type" => "application/json", "x-zype-key" => Zype.configuration.api_key }
+      self.class.base_uri set_base_uri
+    end
 
     def account
       Zype::Account.new(get('/account')['response'])
@@ -117,77 +123,28 @@ module Zype
     def get(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
 
-      request = Net::HTTP::Get.new(path)
-      request.body = MultiJson.encode(params)
-      request["Content-Type"] = "application/json"
-      request["x-zype-key"] = Zype.configuration.api_key
+      # Returns nothing because looks for video with type nil
+      params.delete(:type) if params[:type] == nil
 
-      http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
-      http.use_ssl = Zype.configuration.use_ssl
-
-      response = http.start {|h| h.request(request)}
-
-      handle_response(response)
-
+      self.class.get(path, { query: params, headers: @headers })
     end
 
     def post(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
 
-      request = Net::HTTP::Post.new(path)
-      request.body = MultiJson.encode(params)
-      request["Content-Type"] = "application/json"
-      request["x-zype-key"] = Zype.configuration.api_key
-
-      http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
-      http.use_ssl = Zype.configuration.use_ssl
-
-      response = http.start {|h| h.request(request)}
-
-      handle_response(response)
+      self.class.post(path, { query: params, headers: @headers })
     end
 
     def put(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
 
-      request = Net::HTTP::Put.new(path)
-      request.body = MultiJson.encode(params)
-      request["Content-Type"] = "application/json"
-      request["x-zype-key"] = Zype.configuration.api_key
-
-      http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
-      http.use_ssl = Zype.configuration.use_ssl
-
-      response = http.start {|h| h.request(request)}
-
-      handle_response(response)
+      self.class.put(path, { query: params, headers: @headers })
     end
 
     def delete(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
 
-      request = Net::HTTP::Delete.new(path)
-      request.body = MultiJson.encode(params)
-      request["Content-Type"] = "application/json"
-      request["x-zype-key"] = Zype.configuration.api_key
-
-      http = Net::HTTP.new(Zype.configuration.host, Zype.configuration.port)
-      http.use_ssl = Zype.configuration.use_ssl
-
-      response = http.start {|h| h.request(request)}
-
-      handle_response(response)
-    end
-
-    def handle_response(response)
-      json = MultiJson.decode(response.body) if response.body
-
-      case response.code
-      when /2(\d{2})/
-        success!(response.code,json)
-      else
-        error!(response.code,json)
-      end
+      self.class.delete(path, { query: params, headers: @headers })
     end
 
     def success!(status, response)
@@ -197,6 +154,16 @@ module Zype
     def error!(status,response)
       error_type = ERROR_TYPES[status] || GenericError
       raise error_type.new(response['message'])
+    end
+
+    def set_base_uri
+      if Zype.configuration.use_ssl
+        start_url = 'https://'
+      else
+        start_url = 'http://'
+      end
+
+      start_url + Zype.configuration.host + ':' + Zype.configuration.port.to_s
     end
   end
 end
