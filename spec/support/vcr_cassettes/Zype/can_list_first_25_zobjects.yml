@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/zobjects?zobject_type=actor
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"8d9c1e128d73864d6bfafa3f2b06f0d4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 5d178590-5a5d-4e04-8e46-5c2dc5eb0dd7
+      X-Runtime:
+      - '0.292059'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"546f884c4c616e04b5040000","active":true,"created_at":"2014-11-21T13:45:32.541-05:00","description":"","friendly_title":"tom-cruise","keywords":[],"site_id":"545932274c616e2359000000","title":"Tom
+        Cruise","updated_at":"2014-11-24T12:15:36.860-05:00","video_ids":["546b594d4c616e07fe020000","546b59564c616e07fe0a0000","546b59574c616e07fe0c0000"],"zobject_type_id":"546cd8124c616e043d010000","zobject_type_title":"actor"},{"_id":"546f88654c616e04b5050000","active":true,"created_at":"2014-11-21T13:45:57.711-05:00","description":"","friendly_title":"will-smith","keywords":[],"site_id":"545932274c616e2359000000","title":"Will
+        Smith","updated_at":"2014-11-24T12:15:36.873-05:00","video_ids":["546b594d4c616e07fe020000","546b59564c616e07fe0a0000","546b59574c616e07fe0c0000"],"zobject_type_id":"546cd8124c616e043d010000","zobject_type_title":"actor"}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 23:07:04 GMT
+recorded_with: VCR 2.9.3
