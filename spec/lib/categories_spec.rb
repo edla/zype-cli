@@ -24,4 +24,21 @@ describe Zype, vcr: true do
 
     expect(first_category.title).to_not eq(original_title)
   end
+
+  it 'can create a new category' do
+    category_count = @zype.categories.count
+    @zype.categories.create(title: 'Favorite Pizza Toppings', values: ['Mushroom, Pepperoni'])
+
+    expect(@zype.categories.count).to eq(category_count + 1)
+  end
+
+  it 'can destroy a category' do
+    category_count = @zype.categories.count
+
+    category = @zype.categories.all({}).first
+    category.destroy
+
+    expect(@zype.categories.all({per_page:100}).count).to eq(category_count - 1)
+  end
+
 end

@@ -25,29 +25,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - ! '"d85f6d61f4dfd7a3b14d5fb99d2babe4"'
+      - ! '"8b1fe540986483a61741d40c2f9455fe"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
       - request_method=GET; path=/
       X-Request-Id:
-      - 10dbe47f-e1b4-47e1-8ed3-5e856114922d
+      - f3380422-3e27-457a-84d5-af62ea868706
       X-Runtime:
-      - '0.034854'
+      - '0.137820'
       Transfer-Encoding:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{"response":[{"_id":"545cde234c616e04c3000000","_keywords":["seasonnotnot"],"created_at":"2014-11-07T09:58:43.355-05:00","site_id":"545932274c616e2359000000","title":"SeasonNOTNOT","updated_at":"2014-12-16T13:16:31.852-05:00","values":["1","2","3","4","5","6","7"]},{"_id":"546bbe694c616e07fe3e0000","_keywords":["test"],"created_at":"2014-11-18T16:47:21.221-05:00","site_id":"545932274c616e2359000000","title":"Test","updated_at":"2014-11-18T16:47:21.221-05:00","values":["yes","no"]},{"_id":"546cb2b64c616e043d000000","_keywords":["final","test"],"created_at":"2014-11-19T10:09:42.224-05:00","site_id":"545932274c616e2359000000","title":"Final
-        test","updated_at":"2014-11-19T10:09:42.224-05:00","values":["everything"]},{"_id":"548f5b8e4c616e8031010000","_keywords":["cli"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
+      string: ! '{"response":[{"_id":"548f5b8e4c616e8031010000","_keywords":["cli"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
         the CLI","updated_at":"2014-12-15T17:07:10.481-05:00","values":[]},{"_id":"548f5bb74c616e8031020000","_keywords":["cli"],"created_at":"2014-12-15T17:07:51.307-05:00","site_id":"545932274c616e2359000000","title":"From
         the CLI 2","updated_at":"2014-12-15T17:07:51.307-05:00","values":[]},{"_id":"54906b844c616e20e7000000","_keywords":["bonus","features"],"created_at":"2014-12-16T12:27:32.613-05:00","site_id":"545932274c616e2359000000","title":"Bonus
-        Features","updated_at":"2014-12-16T12:27:32.613-05:00","values":["Yes"]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+        Features","updated_at":"2014-12-16T12:27:32.613-05:00","values":["Yes"]},{"_id":"549079b84c616e20e71d0000","_keywords":["pizza"],"created_at":"2014-12-16T13:28:08.159-05:00","site_id":"545932274c616e2359000000","title":"Pizza","updated_at":"2014-12-16T13:28:08.159-05:00","values":[]},{"_id":"54907ad44c616e20e71f0000","_keywords":["pizza","toppings"],"created_at":"2014-12-16T13:32:52.445-05:00","site_id":"545932274c616e2359000000","title":"Pizza
+        Toppings","updated_at":"2014-12-16T13:32:52.445-05:00","values":["Mushroom,
+        Pepperoni"]},{"_id":"54907b614c616e20e7220000","_keywords":["pizzateset"],"created_at":"2014-12-16T13:35:13.663-05:00","site_id":"545932274c616e2359000000","title":"PizzaTeset","updated_at":"2014-12-16T13:35:13.663-05:00","values":[]},{"_id":"54907b904c616e20e7230000","_keywords":["pizzatest123"],"created_at":"2014-12-16T13:36:00.836-05:00","site_id":"545932274c616e2359000000","title":"PizzaTest123","updated_at":"2014-12-16T13:36:00.836-05:00","values":[]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
     http_version: 
-  recorded_at: Tue, 16 Dec 2014 18:19:15 GMT
+  recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
 - request:
     method: put
-    uri: http://api.zype-core.com:3000/categories/545cde234c616e04c3000000?category%5Btitle%5D=SeasonNOTNOTNOT&category%5Bvalues%5D%5B0%5D=1&category%5Bvalues%5D%5B1%5D=2&category%5Bvalues%5D%5B2%5D=3&category%5Bvalues%5D%5B3%5D=4&category%5Bvalues%5D%5B4%5D=5&category%5Bvalues%5D%5B5%5D=6&category%5Bvalues%5D%5B6%5D=7
+    uri: http://api.zype-core.com:3000/categories/548f5b8e4c616e8031010000?category%5Btitle%5D=From%20the%20CLINOT
     body:
       encoding: US-ASCII
       string: ''
@@ -70,20 +71,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - ! '"2e729cdeadc89247735befa50fc1ee71"'
+      - ! '"bbbac4c06438249eb3ba40b1570749fe"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
       - request_method=PUT; path=/
       X-Request-Id:
-      - 25c48951-160b-4850-b192-ae0aa587e048
+      - 2fe437ba-9fb0-4cd9-9d97-af338d67e172
       X-Runtime:
-      - '0.034888'
+      - '0.121088'
       Transfer-Encoding:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{"response":{"_id":"545cde234c616e04c3000000","_keywords":["seasonnotnotnot"],"created_at":"2014-11-07T09:58:43.355-05:00","site_id":"545932274c616e2359000000","title":"SeasonNOTNOTNOT","updated_at":"2014-12-16T13:19:15.379-05:00","values":["1","2","3","4","5","6","7"]}}'
+      string: ! '{"response":{"_id":"548f5b8e4c616e8031010000","_keywords":["clinot"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLINOT","updated_at":"2014-12-16T13:53:08.266-05:00","values":[]}}'
     http_version: 
-  recorded_at: Tue, 16 Dec 2014 18:19:15 GMT
+  recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
 recorded_with: VCR 2.9.3

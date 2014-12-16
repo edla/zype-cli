@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/categories
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"928a8aa1af976388b03f445dd16580ea"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 40fb6e80-6eb4-4d44-80fa-ac190da7a58e
+      X-Runtime:
+      - '0.176887'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"548f5b8e4c616e8031010000","_keywords":["clinot"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLINOT","updated_at":"2014-12-16T13:53:08.266-05:00","values":[]},{"_id":"548f5bb74c616e8031020000","_keywords":["cli"],"created_at":"2014-12-15T17:07:51.307-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLI 2","updated_at":"2014-12-15T17:07:51.307-05:00","values":[]},{"_id":"54906b844c616e20e7000000","_keywords":["bonus","features"],"created_at":"2014-12-16T12:27:32.613-05:00","site_id":"545932274c616e2359000000","title":"Bonus
+        Features","updated_at":"2014-12-16T12:27:32.613-05:00","values":["Yes"]},{"_id":"549079b84c616e20e71d0000","_keywords":["pizza"],"created_at":"2014-12-16T13:28:08.159-05:00","site_id":"545932274c616e2359000000","title":"Pizza","updated_at":"2014-12-16T13:28:08.159-05:00","values":[]},{"_id":"54907ad44c616e20e71f0000","_keywords":["pizza","toppings"],"created_at":"2014-12-16T13:32:52.445-05:00","site_id":"545932274c616e2359000000","title":"Pizza
+        Toppings","updated_at":"2014-12-16T13:32:52.445-05:00","values":["Mushroom,
+        Pepperoni"]},{"_id":"54907b614c616e20e7220000","_keywords":["pizzateset"],"created_at":"2014-12-16T13:35:13.663-05:00","site_id":"545932274c616e2359000000","title":"PizzaTeset","updated_at":"2014-12-16T13:35:13.663-05:00","values":[]},{"_id":"54907b904c616e20e7230000","_keywords":["pizzatest123"],"created_at":"2014-12-16T13:36:00.836-05:00","site_id":"545932274c616e2359000000","title":"PizzaTest123","updated_at":"2014-12-16T13:36:00.836-05:00","values":[]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
+- request:
+    method: post
+    uri: http://api.zype-core.com:3000/categories?category%5Btitle%5D=Favorite%20Pizza%20Toppings&category%5Bvalues%5D%5B0%5D=Mushroom,%20Pepperoni
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"7b985d9a9a99cb45c544001f64b9ddf3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=POST; path=/
+      X-Request-Id:
+      - 5a7cad5e-c477-4d03-a515-4a87753af6e0
+      X-Runtime:
+      - '0.122549'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"54907f944c616e20e7270000","_keywords":["favorite","pizza","toppings"],"created_at":"2014-12-16T13:53:08.564-05:00","site_id":"545932274c616e2359000000","title":"Favorite
+        Pizza Toppings","updated_at":"2014-12-16T13:53:08.564-05:00","values":["Mushroom,
+        Pepperoni"]}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/categories
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"48810d921f5415625c4b88e993aeea20"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 084e0446-45df-4931-af18-9c929127266b
+      X-Runtime:
+      - '0.143924'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"54907f944c616e20e7270000","_keywords":["favorite","pizza","toppings"],"created_at":"2014-12-16T13:53:08.564-05:00","site_id":"545932274c616e2359000000","title":"Favorite
+        Pizza Toppings","updated_at":"2014-12-16T13:53:08.564-05:00","values":["Mushroom,
+        Pepperoni"]},{"_id":"548f5b8e4c616e8031010000","_keywords":["clinot"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLINOT","updated_at":"2014-12-16T13:53:08.266-05:00","values":[]},{"_id":"548f5bb74c616e8031020000","_keywords":["cli"],"created_at":"2014-12-15T17:07:51.307-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLI 2","updated_at":"2014-12-15T17:07:51.307-05:00","values":[]},{"_id":"54906b844c616e20e7000000","_keywords":["bonus","features"],"created_at":"2014-12-16T12:27:32.613-05:00","site_id":"545932274c616e2359000000","title":"Bonus
+        Features","updated_at":"2014-12-16T12:27:32.613-05:00","values":["Yes"]},{"_id":"549079b84c616e20e71d0000","_keywords":["pizza"],"created_at":"2014-12-16T13:28:08.159-05:00","site_id":"545932274c616e2359000000","title":"Pizza","updated_at":"2014-12-16T13:28:08.159-05:00","values":[]},{"_id":"54907ad44c616e20e71f0000","_keywords":["pizza","toppings"],"created_at":"2014-12-16T13:32:52.445-05:00","site_id":"545932274c616e2359000000","title":"Pizza
+        Toppings","updated_at":"2014-12-16T13:32:52.445-05:00","values":["Mushroom,
+        Pepperoni"]},{"_id":"54907b614c616e20e7220000","_keywords":["pizzateset"],"created_at":"2014-12-16T13:35:13.663-05:00","site_id":"545932274c616e2359000000","title":"PizzaTeset","updated_at":"2014-12-16T13:35:13.663-05:00","values":[]},{"_id":"54907b904c616e20e7230000","_keywords":["pizzatest123"],"created_at":"2014-12-16T13:36:00.836-05:00","site_id":"545932274c616e2359000000","title":"PizzaTest123","updated_at":"2014-12-16T13:36:00.836-05:00","values":[]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
+recorded_with: VCR 2.9.3

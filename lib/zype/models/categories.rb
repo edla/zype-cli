@@ -11,7 +11,6 @@ module Zype
     end
 
     def create(attributes={})
-      binding.pry
       load(service.post("/categories", category: attributes))
     end
 
