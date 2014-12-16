@@ -7,3 +7,11 @@ gem 'thor'
 gem 'rainbow'
 gem 'hirb'
 gem 'httparty'
+
+group :test do
+  gem 'webmock'
+  gem 'rspec'
+  gem 'vcr'
+  gem 'pry'
+  gem 'pry-debugger'
+end
