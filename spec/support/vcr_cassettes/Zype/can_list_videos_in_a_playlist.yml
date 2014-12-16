@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"6fdfbd19a55ab7d609f8394435103929"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - dc5699a9-6820-43ba-ba46-105d7ab777dd
+      X-Runtime:
+      - '0.134297'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549082404c616e20e7290000","_keywords":["playlist","test"],"active":true,"created_at":"2014-12-16T14:04:32.666-05:00","description":"","priority":0,"related_video_ids":[],"site_id":"545932274c616e2359000000","title":"Test
+        Playlist","updated_at":"2014-12-16T14:04:32.666-05:00","playlist_item_count":4}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:06:41 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549082404c616e20e7290000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"b1ff462ed95d7e93373bbb294248168a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 456024d5-250f-46b0-8a75-1c1813d17f7c
+      X-Runtime:
+      - '0.292631'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"5481f66e4c616e06ec670000","active":true,"categories":[{"title":"Season","value":["1","2","3","4","5","6","7"]},{"title":"Final
+        test","value":["everything"]},{"title":"Test","value":["no","yes"]}],"country":"","created_at":"2014-12-05T13:16:14.280-05:00","description":"Music
+        video by Taylor Swift performing #VEVOCertified, Pt. 3: Taylor Talks About
+        Her Fans. (C) 2012 Big Machine Records, LLC.","duration":141,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2012-10-29T11:45:07.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545932274c616e2359000000","status":"created","subscription_required":false,"title":"#VEVOCertified,
+        Pt. 3: Taylor Talks About Her Fans","updated_at":"2014-12-15T17:53:24.119-05:00","zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/ehLp0cjqkRk/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/ehLp0cjqkRk/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/ehLp0cjqkRk/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/ehLp0cjqkRk/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/ehLp0cjqkRk/maxresdefault.jpg","width":1280}]},{"_id":"5481f2814c616e06ec610000","active":true,"categories":[{"title":"Season","value":["1"]},{"title":"Test","value":["no"]},{"title":"Final
+        test","value":["everything"]}],"country":"","created_at":"2014-12-05T12:59:29.626-05:00","description":"Music
+        video by Taylor Swift performing #VEVOCertified, Pt. 4: Taylor Superfans.
+        (C) 2012 Big Machine Records, LLC.","duration":188,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2012-10-29T11:45:07.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545932274c616e2359000000","status":"created","subscription_required":false,"title":"#VEVOCertified,
+        Pt. 4: Taylor Superfans aka Swifties","updated_at":"2014-12-15T17:53:32.046-05:00","zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/Eo2D8Ez3WAo/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/Eo2D8Ez3WAo/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/Eo2D8Ez3WAo/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/Eo2D8Ez3WAo/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/Eo2D8Ez3WAo/maxresdefault.jpg","width":1280}]},{"_id":"5481f5804c616e06ec650000","active":true,"categories":[{"title":"Final
+        test","value":[]},{"title":"Season","value":[]},{"title":"Test","value":[]}],"country":"","created_at":"2014-12-05T13:12:16.681-05:00","description":"Music
+        video by Taylor Swift performing #VEVOCertified, Pt. 5: You Belong With Me
+        (Taylor Commentary). (C) 2012 Big Machine Records, LLC.","duration":255,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2012-10-29T11:45:07.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545932274c616e2359000000","status":"created","subscription_required":false,"title":"#VEVOCertified,
+        Pt. 5: You Belong With Me (Taylor Comment...","updated_at":"2014-12-15T17:53:36.983-05:00","zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/5FODVFJZlTg/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/5FODVFJZlTg/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/5FODVFJZlTg/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/5FODVFJZlTg/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/5FODVFJZlTg/maxresdefault.jpg","width":1280}]},{"_id":"5481ed144c616e06ec4f0000","active":true,"categories":[{"title":"Final
+        test","value":[]},{"title":"Season","value":[]},{"title":"Test","value":[]}],"country":"","created_at":"2014-12-05T12:36:20.694-05:00","description":"Music
+        video by Taylor Swift performing #VEVOCertified, Pt. 6: Mine (Taylor Commentary).
+        (C) 2012 Big Machine Records, LLC.","duration":257,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2012-10-29T11:45:07.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545932274c616e2359000000","status":"created","subscription_required":false,"title":"#VEVOCertified,
+        Pt. 6: Mine (Taylor Commentary)","updated_at":"2014-12-15T17:53:42.934-05:00","zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/FNWq-pr5ON8/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/FNWq-pr5ON8/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/FNWq-pr5ON8/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/FNWq-pr5ON8/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/FNWq-pr5ON8/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:06:41 GMT
+recorded_with: VCR 2.9.3

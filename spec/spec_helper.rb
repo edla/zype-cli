@@ -8,7 +8,8 @@ require 'zype'
 
 RSpec.configure do |config|
   config.before(:suite) do
-    # Set up Zype Environment the way you want (currently pointing to a dev app)
+    # Set up Zype Environment the way you want (currently pointing to a dev property,
+    # since it makes calls to the Zype API)
     Zype.configuration.api_key = 'D1Ds5oSPvEoLM8UefkuKfg'
     Zype.configuration.use_ssl = false
     Zype.configuration.port = 3000

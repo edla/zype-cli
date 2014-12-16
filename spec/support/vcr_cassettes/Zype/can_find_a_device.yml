@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/devices
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"55e6e5c164ca3beb761c2cd1cb576a17"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 852461aa-2ad0-45f4-9c4c-59010bce7568
+      X-Runtime:
+      - '0.154214'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"5429b1c569702d2f7c080000","description":"Accessed
+        via desktop HTML5 web browser","name":"Desktop"},{"_id":"5429b1c669702d2f7c0a0000","description":"Accessed
+        via Safari","name":"iOS (HTML5)"},{"_id":"5429b1c669702d2f7c0c0000","description":"Accessed
+        via Chrome","name":"Android (HTML5)"},{"_id":"5429b1c669702d2f7c0e0000","description":"Access
+        via native iOS app","name":"iOS (Native)"},{"_id":"5429b1c769702d2f7c100000","description":"Access
+        via native Android app","name":"Android (Native)"},{"_id":"5429b1c769702d2f7c120000","description":"Accessed
+        via Roku Set Top Box","name":"Roku"},{"_id":"5429b1c769702d2f7c140000","description":"Accessed
+        via Xbox","name":"Xbox"},{"_id":"5429b1c869702d2f7c160000","description":"Accessed
+        via Chromecast","name":"Chromecast"},{"_id":"5434947269702d015e020000","description":"Accessed
+        via Internet Explorer Mobile","name":"Windows Phone (HTML5)"}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:57:20 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/devices/5429b1c569702d2f7c080000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"23e7d657bb1d99c2ea81b1f56932aa78"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 674a9af2-43de-4b55-be94-07eb0a1a519e
+      X-Runtime:
+      - '0.107753'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"5429b1c569702d2f7c080000","description":"Accessed
+        via desktop HTML5 web browser","name":"Desktop"}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:57:20 GMT
+recorded_with: VCR 2.9.3
