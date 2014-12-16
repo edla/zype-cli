@@ -17,7 +17,7 @@ RSpec.configure do |config|
 end
 
 
-# To re-record Cassettes, delete the .yml cassets in support/vcr_cassettes/Zype_Client
+# To re-record Cassettes, delete the cassets in support/vcr_cassettes
 VCR.configure do |c|
   c.hook_into :webmock
   c.cassette_library_dir = 'spec/support/vcr_cassettes'

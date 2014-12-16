@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Zype::Client, vcr: true do
+describe Zype, vcr: true do
   before(:each) do
     @zype = Zype::Client.new
   end
@@ -11,7 +11,7 @@ describe Zype::Client, vcr: true do
     expect(@zype.videos.all(params).class).to eq(Zype::Videos)
   end
 
-  it 'get a video' do
+  it 'find a video' do
     first_video_id = @zype.videos.all({}).first._id
 
     expect(@zype.videos.find(first_video_id).class).to eq(Zype::Video)
@@ -27,12 +27,5 @@ describe Zype::Client, vcr: true do
     expect(first_video.title).to_not eq(original_title)
   end
 
-  it 'can create a category' do
-    params = {title: 'Bonus Features', values: ['Yes']}
-    category_count = @zype.categories.all({}).count
-
-    @zype.categories.create(params)
-
-    expect(@zype.categories.all({}).count).to be(category_count + 1)
-  end
+  it 'can create a video'
 end
