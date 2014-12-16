@@ -1,5 +1,6 @@
 require 'net/https'
 require 'httparty'
+require 'pry'
 
 module Zype
   class Client
@@ -123,8 +124,8 @@ module Zype
     def get(path,params={})
       raise NoApiKey if Zype.configuration.api_key.to_s.empty?
 
-      # Returns nothing because looks for video with type nil
-      params.delete(:type) if params[:type] == nil
+      # iterate through and remove params that are nil
+      params.delete_if { |k, v| v.nil? }
 
       self.class.get(path, { query: params, headers: @headers })
     end
