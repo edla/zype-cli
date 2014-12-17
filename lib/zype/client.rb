@@ -89,10 +89,13 @@ module Zype
 
     model :account
     model :category
+    model :consumer
     model :device
     model :device_category
+    model :plan
     model :playlist
     model :revenue_model
+    model :subscription
     model :upload
     model :video
     model :video_source
@@ -100,10 +103,13 @@ module Zype
     model :zobject
 
     collection :categories
+    collection :consumers
     collection :devices
     collection :device_categories
-    collection :revenue_models
+    collection :plans
     collection :playlists
+    collection :revenue_models
+    collection :subscriptions
     collection :uploads
     collection :videos
     collection :video_sources
