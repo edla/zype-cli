@@ -22,7 +22,7 @@ require 'zype'
 
 3. Configure gem
 
-### For a rails application add the following under: config/initializers/zype.rb
+#### For a rails application add the following under: config/initializers/zype.rb
 
 Zype.configure do |config|
   config.api_key = [your api key]
