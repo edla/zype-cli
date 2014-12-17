@@ -137,4 +137,127 @@ http_interactions:
         Pepperoni"]},{"_id":"54907b614c616e20e7220000","_keywords":["pizzateset"],"created_at":"2014-12-16T13:35:13.663-05:00","site_id":"545932274c616e2359000000","title":"PizzaTeset","updated_at":"2014-12-16T13:35:13.663-05:00","values":[]},{"_id":"54907b904c616e20e7230000","_keywords":["pizzatest123"],"created_at":"2014-12-16T13:36:00.836-05:00","site_id":"545932274c616e2359000000","title":"PizzaTest123","updated_at":"2014-12-16T13:36:00.836-05:00","values":[]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
     http_version: 
   recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/consumers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"b32f4e385a2ef56e4d5393f8aa503216"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 3d564c39-a2af-40e5-92bc-f0779f08bd67
+      X-Runtime:
+      - '0.026138'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"54919c6e4c616e63330f0000","_keywords":["com","email","example"],"created_at":"2014-12-17T10:08:30.282-05:00","email":"email-3@example.com","site_id":"545932274c616e2359000000","stripe_id":null,"subscription_count":0,"updated_at":"2014-12-17T10:08:30.282-05:00","video_favorites":[{"_id":"54919f334c616e60ce000000","created_at":"2014-12-17T10:20:19.421-05:00","updated_at":"2014-12-17T10:20:19.421-05:00","video_id":"546f75734c616e04b5020000"}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 15:25:17 GMT
+- request:
+    method: post
+    uri: http://api.zype-core.com:3000/consumers?consumer%5Bemail%5D=test@example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"8327bbc9af367150b072f2d88f7af340"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=POST; path=/
+      X-Request-Id:
+      - 6bf90335-fc7b-487f-a5d7-2a508e462e4e
+      X-Runtime:
+      - '0.904067'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"5491a05d4c616e60ce020000","_keywords":["com","example","test"],"created_at":"2014-12-17T10:25:17.923-05:00","email":"test@example.com","site_id":"545932274c616e2359000000","stripe_id":"cus_5LQWwsDGJxgHbQ","subscription_count":0,"updated_at":"2014-12-17T10:25:17.923-05:00"}}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 15:25:18 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/consumers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"0df0e32426674f06824125cd029e3664"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 941e4588-f340-484e-9ec3-2098c9a8bc41
+      X-Runtime:
+      - '0.030805'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"54919c6e4c616e63330f0000","_keywords":["com","email","example"],"created_at":"2014-12-17T10:08:30.282-05:00","email":"email-3@example.com","site_id":"545932274c616e2359000000","stripe_id":null,"subscription_count":0,"updated_at":"2014-12-17T10:08:30.282-05:00","video_favorites":[{"_id":"54919f334c616e60ce000000","created_at":"2014-12-17T10:20:19.421-05:00","updated_at":"2014-12-17T10:20:19.421-05:00","video_id":"546f75734c616e04b5020000"}]},{"_id":"5491a05d4c616e60ce020000","_keywords":["com","example","test"],"created_at":"2014-12-17T10:25:17.923-05:00","email":"test@example.com","site_id":"545932274c616e2359000000","stripe_id":"cus_5LQWwsDGJxgHbQ","subscription_count":0,"updated_at":"2014-12-17T10:25:17.923-05:00"}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 15:25:18 GMT
 recorded_with: VCR 2.9.3
