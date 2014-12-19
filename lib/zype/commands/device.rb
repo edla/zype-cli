@@ -23,24 +23,6 @@ module Zype
       print_devices(device)
     end
 
-    desc 'device:find', 'Find a device by ID'
-
-    method_option 'id', desc: 'Device ID',
-                  aliases: 'i', type: :string, required: true
-
-    define_method 'device:find' do
-      init_client
-
-      begin
-        device = @zype.devices.find(options[:id])
-
-        print_devices(device)
-
-      rescue Zype::Client::NotFound => e
-        puts "Could not find device: #{options[:id]}"
-      end
-    end
-
     no_commands do
 
       def print_devices(devices)

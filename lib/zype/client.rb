@@ -86,29 +86,35 @@ module Zype
     model_path 'zype/models'
 
     model :account
+    model :card
     model :category
+    model :consumer
     model :device
     model :device_category
+    model :plan
     model :playlist
     model :revenue_model
+    model :subscription
     model :upload
     model :video
     model :video_source
     model :zobject_type
     model :zobject
 
+    collection :cards
     collection :categories
+    collection :consumers
     collection :devices
     collection :device_categories
-    collection :revenue_models
+    collection :plans
     collection :playlists
+    collection :revenue_models    
+    collection :subscriptions
     collection :uploads
     collection :videos
     collection :video_sources
     collection :zobject_types
     collection :zobjects
-
-
 
     def account
       Zype::Account.new(get('/account')['response'])
