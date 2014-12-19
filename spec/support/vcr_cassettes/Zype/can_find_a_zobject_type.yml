@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/zobject_types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"fd4c91f9dc2351602a2c25a35b3a9487"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 2eb45463-ef1b-47b8-8365-a0e03a0e3483
+      X-Runtime:
+      - '0.169971'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"546cd8124c616e043d010000","_keywords":["actor"],"created_at":"2014-11-19T12:49:06.385-05:00","description":"","site_id":"545932274c616e2359000000","title":"actor","updated_at":"2014-11-19T12:49:06.385-05:00","videos_enabled":true,"zobject_count":2},{"_id":"546cd8324c616e043d020000","_keywords":["director"],"created_at":"2014-11-19T12:49:38.521-05:00","description":"","site_id":"545932274c616e2359000000","title":"director","updated_at":"2014-11-19T12:49:38.521-05:00","videos_enabled":true,"zobject_count":2},{"_id":"547367fb4c616e0f00000000","_keywords":["test"],"created_at":"2014-11-24T12:16:43.555-05:00","description":"","site_id":"545932274c616e2359000000","title":"test","updated_at":"2014-11-24T12:16:43.555-05:00","videos_enabled":true,"zobject_count":2},{"_id":"5473691f4c616e0f00030000","_keywords":["second","test"],"created_at":"2014-11-24T12:21:35.007-05:00","description":"","site_id":"545932274c616e2359000000","title":"second
+        test","updated_at":"2014-11-24T12:21:35.007-05:00","videos_enabled":true,"zobject_count":2},{"_id":"54736a354c616e0f00050000","_keywords":["test","third"],"created_at":"2014-11-24T12:26:13.351-05:00","description":"","site_id":"545932274c616e2359000000","title":"third
+        test","updated_at":"2014-11-24T12:26:13.351-05:00","videos_enabled":true,"zobject_count":3},{"_id":"547379f74c616e0f000c0000","_keywords":["4th","test"],"created_at":"2014-11-24T13:33:27.967-05:00","description":"","site_id":"545932274c616e2359000000","title":"4th
+        test","updated_at":"2014-11-24T13:33:27.967-05:00","videos_enabled":true,"zobject_count":3},{"_id":"5480c7eb4c616e2c8a030000","_keywords":["blog"],"created_at":"2014-12-04T15:45:31.544-05:00","description":"","site_id":"545932274c616e2359000000","title":"blog","updated_at":"2014-12-04T15:45:31.544-05:00","videos_enabled":true,"zobject_attributes":[{"_id":"5480c7eb4c616e2c8a040000","created_at":"2014-12-04T15:45:31.544-05:00","description":"","field_name":"body","field_type":"Text","show_list":false,"updated_at":"2014-12-04T15:45:31.544-05:00"}],"zobject_count":1}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:51:25 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/zobject_types/546cd8124c616e043d010000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"3a22666971fe15885eb91be74d3c22ba"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - d5f502ec-c895-44fc-a1e0-138d947b891f
+      X-Runtime:
+      - '0.113698'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"546cd8124c616e043d010000","_keywords":["actor"],"created_at":"2014-11-19T12:49:06.385-05:00","description":"","site_id":"545932274c616e2359000000","title":"actor","updated_at":"2014-11-19T12:49:06.385-05:00","videos_enabled":true,"zobject_count":2}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:51:51 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/zobjects?zobject_type=actor
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"8d9c1e128d73864d6bfafa3f2b06f0d4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 65eb9775-8010-449a-9e59-85f54f9ef0e5
+      X-Runtime:
+      - '0.243713'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"546f884c4c616e04b5040000","active":true,"created_at":"2014-11-21T13:45:32.541-05:00","description":"","friendly_title":"tom-cruise","keywords":[],"site_id":"545932274c616e2359000000","title":"Tom
+        Cruise","updated_at":"2014-11-24T12:15:36.860-05:00","video_ids":["546b594d4c616e07fe020000","546b59564c616e07fe0a0000","546b59574c616e07fe0c0000"],"zobject_type_id":"546cd8124c616e043d010000","zobject_type_title":"actor"},{"_id":"546f88654c616e04b5050000","active":true,"created_at":"2014-11-21T13:45:57.711-05:00","description":"","friendly_title":"will-smith","keywords":[],"site_id":"545932274c616e2359000000","title":"Will
+        Smith","updated_at":"2014-11-24T12:15:36.873-05:00","video_ids":["546b594d4c616e07fe020000","546b59564c616e07fe0a0000","546b59574c616e07fe0c0000"],"zobject_type_id":"546cd8124c616e043d010000","zobject_type_title":"actor"}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 23:07:04 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/zobjects/546f884c4c616e04b5040000?zobject_type=actor
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"230f2228d2b72fc90856d93af175b012"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - b9a7e48a-39a0-4068-964c-dfdb40d0cd69
+      X-Runtime:
+      - '0.140079'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"546f884c4c616e04b5040000","active":true,"created_at":"2014-11-21T13:45:32.541-05:00","description":"","friendly_title":"tom-cruise","keywords":[],"site_id":"545932274c616e2359000000","title":"Tom
+        Cruise","updated_at":"2014-11-24T12:15:36.860-05:00","video_ids":["546b594d4c616e07fe020000","546b59564c616e07fe0a0000","546b59574c616e07fe0c0000"],"zobject_type_id":"546cd8124c616e043d010000","zobject_type_title":"actor"}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 23:08:03 GMT
+recorded_with: VCR 2.9.3

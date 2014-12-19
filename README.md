@@ -1,6 +1,6 @@
-Zype-CLI
+# Zype-CLI
 
-== How to install
+## How to install
 
 1. Build gem
 
@@ -10,7 +10,7 @@ gem build zype.gemspec
 
 gem install ./zype-1.0.0.gem
 
-== How to use
+## How to use
 
 1. Open irb
 
@@ -22,8 +22,7 @@ require 'zype'
 
 3. Configure gem
 
-# For a rails application add the following under:
-# config/initializers/zype.rb
+#### For a rails application add the following under: config/initializers/zype.rb
 
 Zype.configure do |config|
   config.api_key = [your api key]
@@ -36,6 +35,16 @@ end
 
 Zype::Client.new
 
-3. Query zobjects
+5. Query zobjects
 
 client.zobjects.all(zobject: 'team')
+
+## To Test
+
+1. Go to spec/spec_helper.rb and edit the Zype configurations where you want your
+tests to query to.
+
+2. Run $ rspec spec
+
+3. API Queries are recorded in spec/support/vcr_cassettes. If you want fresh API queries,
+delete the Zype directory of yml records and run your tests again!

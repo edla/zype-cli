@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/categories
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"8b1fe540986483a61741d40c2f9455fe"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 1ddb6364-cb31-418a-b451-c1d141af3055
+      X-Runtime:
+      - '0.144570'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"548f5b8e4c616e8031010000","_keywords":["cli"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLI","updated_at":"2014-12-15T17:07:10.481-05:00","values":[]},{"_id":"548f5bb74c616e8031020000","_keywords":["cli"],"created_at":"2014-12-15T17:07:51.307-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLI 2","updated_at":"2014-12-15T17:07:51.307-05:00","values":[]},{"_id":"54906b844c616e20e7000000","_keywords":["bonus","features"],"created_at":"2014-12-16T12:27:32.613-05:00","site_id":"545932274c616e2359000000","title":"Bonus
+        Features","updated_at":"2014-12-16T12:27:32.613-05:00","values":["Yes"]},{"_id":"549079b84c616e20e71d0000","_keywords":["pizza"],"created_at":"2014-12-16T13:28:08.159-05:00","site_id":"545932274c616e2359000000","title":"Pizza","updated_at":"2014-12-16T13:28:08.159-05:00","values":[]},{"_id":"54907ad44c616e20e71f0000","_keywords":["pizza","toppings"],"created_at":"2014-12-16T13:32:52.445-05:00","site_id":"545932274c616e2359000000","title":"Pizza
+        Toppings","updated_at":"2014-12-16T13:32:52.445-05:00","values":["Mushroom,
+        Pepperoni"]},{"_id":"54907b614c616e20e7220000","_keywords":["pizzateset"],"created_at":"2014-12-16T13:35:13.663-05:00","site_id":"545932274c616e2359000000","title":"PizzaTeset","updated_at":"2014-12-16T13:35:13.663-05:00","values":[]},{"_id":"54907b904c616e20e7230000","_keywords":["pizzatest123"],"created_at":"2014-12-16T13:36:00.836-05:00","site_id":"545932274c616e2359000000","title":"PizzaTest123","updated_at":"2014-12-16T13:36:00.836-05:00","values":[]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:53:07 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/categories/548f5b8e4c616e8031010000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"b99cea4b80a195dc4d02a95bec0b36ca"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 77f71b19-7d3f-44d2-91fe-371b3aa36989
+      X-Runtime:
+      - '0.104969'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"548f5b8e4c616e8031010000","_keywords":["cli"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLI","updated_at":"2014-12-15T17:07:10.481-05:00","values":[]}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/device_categories
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"f31bbd6b90586c46b457be4a297b62ae"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 3b74e3a1-3479-467e-b068-708229188567
+      X-Runtime:
+      - '0.127092'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"5429b1c369702d2f7c040000","_keywords":["desktop"],"created_at":"2014-09-29T15:23:47.302-04:00","image_content_type":"image/png","image_file_name":"desktop.png","image_file_size":19347,"image_fingerprint":"a661d27f5003bcf1523f75e3686f6b24","image_updated_at":"2014-09-29T15:23:47.099-04:00","name":"Desktop","updated_at":"2014-09-29T15:23:47.302-04:00"},{"_id":"5429b1c469702d2f7c050000","_keywords":["mobile"],"created_at":"2014-09-29T15:23:48.879-04:00","image_content_type":"image/png","image_file_name":"mobile.png","image_file_size":18671,"image_fingerprint":"070c15b95b315a6f472a6efb6c3b898c","image_updated_at":"2014-09-29T15:23:48.788-04:00","name":"Mobile","updated_at":"2014-09-29T15:23:48.879-04:00"},{"_id":"5429b1c569702d2f7c060000","_keywords":["ott"],"created_at":"2014-09-29T15:23:49.234-04:00","image_content_type":"image/png","image_file_name":"desktop.png","image_file_size":19347,"image_fingerprint":"a661d27f5003bcf1523f75e3686f6b24","image_updated_at":"2014-09-29T15:23:49.057-04:00","name":"OTT","updated_at":"2014-09-29T15:23:49.234-04:00"},{"_id":"5429b1c569702d2f7c070000","_keywords":["tablet"],"created_at":"2014-09-29T15:23:49.531-04:00","image_content_type":"image/png","image_file_name":"tablet.png","image_file_size":18686,"image_fingerprint":"8be3ee187e89cc533382bb06b6dae3ea","image_updated_at":"2014-09-29T15:23:49.441-04:00","name":"Tablet","updated_at":"2014-09-29T15:23:49.531-04:00"}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:55:14 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/categories/5429b1c369702d2f7c040000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 0fd7023d-c037-4010-87c9-4b973e76a88b
+      X-Runtime:
+      - '0.074549'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"message":"Category not found"}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:55:14 GMT
+recorded_with: VCR 2.9.3

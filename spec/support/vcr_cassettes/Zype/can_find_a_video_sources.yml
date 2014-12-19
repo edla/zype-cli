@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/video_sources?page=0&per_page=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"4bedca7587fb3fadfb1f723aea3f5020"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - d9d41a4c-dab7-43e1-91d2-d646aeacdeff
+      X-Runtime:
+      - '0.161190'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"5463e5124c616e2127200000","_keywords":["battles","epic","rap","videosource","youtube"],"created_at":"2014-11-12T17:54:10.626-05:00","deleteable":true,"editable":true,"guid":"UCMu5gPmKp5av0QCAajKTMhw","name":"Epic
+        Rap Battles","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":"2014-11-18T09:35:43.701-05:00","site_id":"545932274c616e2359000000","updated_at":"2014-11-18T09:35:47.901-05:00","video_count":0},{"_id":"5464dd5a4c616e0315270000","_keywords":["channel","my","videosource","youtube"],"created_at":"2014-11-13T11:33:30.604-05:00","deleteable":true,"editable":true,"guid":"UCQcLLP-U8jVBhgE57ANjsZg","name":"My
+        YouTube Channel","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":"2014-11-13T11:33:30.757-05:00","site_id":"545932274c616e2359000000","updated_at":"2014-11-18T18:25:44.667-05:00","video_count":0},{"_id":"546f75504c616e04b5010000","_keywords":["channel","my","videosource","youtube"],"created_at":"2014-11-21T12:24:32.666-05:00","deleteable":true,"editable":true,"guid":"UCEWHPFNilsT0IfQfutVzsag","name":"My
+        Channel","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":"2014-11-21T12:24:32.729-05:00","site_id":"545932274c616e2359000000","updated_at":"2014-11-21T12:24:48.713-05:00","video_count":0},{"_id":"546bda334c616e368a010000","_keywords":["swift","taylor","videosource","youtube"],"created_at":"2014-11-18T18:45:55.561-05:00","deleteable":true,"editable":true,"guid":"UCANLZYMidaCbLQFWXBC95Jg","name":"Taylor
+        Swift YouTube","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":"2014-11-18T18:45:55.605-05:00","site_id":"545932274c616e2359000000","updated_at":"2014-11-18T18:46:00.871-05:00","video_count":0},{"_id":"547e32b44c616e14900b0000","_keywords":["videosource","zype"],"created_at":"2014-12-02T16:44:21.144-05:00","deleteable":false,"editable":false,"name":"Zype","provider_id":"5429b1ca69702d2f7c190000","refreshed_at":null,"site_id":"545932274c616e2359000000","updated_at":"2014-12-02T16:44:21.144-05:00","video_count":0}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:17:27 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/revenue_models/5463e5124c616e2127200000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - ca7f9dae-4c04-42f8-9d6a-5c64059c6674
+      X-Runtime:
+      - '0.287404'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"message":"Revenue model not found"}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:17:27 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/video_sources/5463e5124c616e2127200000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"0e4e746c2adf826724d63beb0e997f82"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 7512ecbd-bbc8-47e8-8d0b-645329663bc1
+      X-Runtime:
+      - '0.320815'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"5463e5124c616e2127200000","_keywords":["battles","epic","rap","videosource","youtube"],"created_at":"2014-11-12T17:54:10.626-05:00","deleteable":true,"editable":true,"guid":"UCMu5gPmKp5av0QCAajKTMhw","name":"Epic
+        Rap Battles","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":"2014-11-18T09:35:43.701-05:00","site_id":"545932274c616e2359000000","updated_at":"2014-11-18T09:35:47.901-05:00","video_count":0}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:31:03 GMT
+recorded_with: VCR 2.9.3

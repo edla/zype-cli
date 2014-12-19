@@ -1,0 +1,163 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"6fdfbd19a55ab7d609f8394435103929"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 1f59654c-7544-46ea-9b3a-ab12adec8d67
+      X-Runtime:
+      - '0.130594'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549082404c616e20e7290000","_keywords":["playlist","test"],"active":true,"created_at":"2014-12-16T14:04:32.666-05:00","description":"","priority":0,"related_video_ids":[],"site_id":"545932274c616e2359000000","title":"Test
+        Playlist","updated_at":"2014-12-16T14:04:32.666-05:00","playlist_item_count":4}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:06:41 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"6fdfbd19a55ab7d609f8394435103929"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 5111c084-09a7-4b18-ae08-6bde824f6d08
+      X-Runtime:
+      - '0.128825'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549082404c616e20e7290000","_keywords":["playlist","test"],"active":true,"created_at":"2014-12-16T14:04:32.666-05:00","description":"","priority":0,"related_video_ids":[],"site_id":"545932274c616e2359000000","title":"Test
+        Playlist","updated_at":"2014-12-16T14:04:32.666-05:00","playlist_item_count":4}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:06:41 GMT
+- request:
+    method: delete
+    uri: http://api.zype-core.com:3000/playlists/549082404c616e20e7290000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - request_method=DELETE; path=/
+      X-Request-Id:
+      - df5b360b-bf9a-43b6-bbed-df22fec016c8
+      X-Runtime:
+      - '0.124738'
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:06:41 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"3fdbea8a460a780d470589d7a9975764"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 00e03649-4142-4d0f-9571-771f6becc1fa
+      X-Runtime:
+      - '0.089551'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[],"pagination":{"current":1,"previous":null,"next":2,"per_page":10,"pages":0}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:06:41 GMT
+recorded_with: VCR 2.9.3

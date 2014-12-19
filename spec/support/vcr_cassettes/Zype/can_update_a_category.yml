@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/categories
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"8b1fe540986483a61741d40c2f9455fe"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - f3380422-3e27-457a-84d5-af62ea868706
+      X-Runtime:
+      - '0.137820'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"548f5b8e4c616e8031010000","_keywords":["cli"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLI","updated_at":"2014-12-15T17:07:10.481-05:00","values":[]},{"_id":"548f5bb74c616e8031020000","_keywords":["cli"],"created_at":"2014-12-15T17:07:51.307-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLI 2","updated_at":"2014-12-15T17:07:51.307-05:00","values":[]},{"_id":"54906b844c616e20e7000000","_keywords":["bonus","features"],"created_at":"2014-12-16T12:27:32.613-05:00","site_id":"545932274c616e2359000000","title":"Bonus
+        Features","updated_at":"2014-12-16T12:27:32.613-05:00","values":["Yes"]},{"_id":"549079b84c616e20e71d0000","_keywords":["pizza"],"created_at":"2014-12-16T13:28:08.159-05:00","site_id":"545932274c616e2359000000","title":"Pizza","updated_at":"2014-12-16T13:28:08.159-05:00","values":[]},{"_id":"54907ad44c616e20e71f0000","_keywords":["pizza","toppings"],"created_at":"2014-12-16T13:32:52.445-05:00","site_id":"545932274c616e2359000000","title":"Pizza
+        Toppings","updated_at":"2014-12-16T13:32:52.445-05:00","values":["Mushroom,
+        Pepperoni"]},{"_id":"54907b614c616e20e7220000","_keywords":["pizzateset"],"created_at":"2014-12-16T13:35:13.663-05:00","site_id":"545932274c616e2359000000","title":"PizzaTeset","updated_at":"2014-12-16T13:35:13.663-05:00","values":[]},{"_id":"54907b904c616e20e7230000","_keywords":["pizzatest123"],"created_at":"2014-12-16T13:36:00.836-05:00","site_id":"545932274c616e2359000000","title":"PizzaTest123","updated_at":"2014-12-16T13:36:00.836-05:00","values":[]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
+- request:
+    method: put
+    uri: http://api.zype-core.com:3000/categories/548f5b8e4c616e8031010000?category%5Btitle%5D=From%20the%20CLINOT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"bbbac4c06438249eb3ba40b1570749fe"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=PUT; path=/
+      X-Request-Id:
+      - 2fe437ba-9fb0-4cd9-9d97-af338d67e172
+      X-Runtime:
+      - '0.121088'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"548f5b8e4c616e8031010000","_keywords":["clinot"],"created_at":"2014-12-15T17:07:10.481-05:00","site_id":"545932274c616e2359000000","title":"From
+        the CLINOT","updated_at":"2014-12-16T13:53:08.266-05:00","values":[]}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 18:53:08 GMT
+recorded_with: VCR 2.9.3

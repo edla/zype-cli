@@ -1,0 +1,169 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"927c6fbcb5eefa0a6fdee443c419dd17"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 9c381319-bfab-46ed-9f98-2a53eb43d1b0
+      X-Runtime:
+      - '0.403923'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"5490846f4c616e20e7360000","_keywords":["active","best","playlist"],"active":true,"created_at":"2014-12-16T14:13:51.394-05:00","description":null,"priority":null,"related_video_ids":[],"site_id":"545932274c616e2359000000","title":"The
+        best active playlist!","updated_at":"2014-12-16T14:13:51.394-05:00","playlist_item_count":0}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:43:03 GMT
+- request:
+    method: post
+    uri: http://api.zype-core.com:3000/playlists?playlist%5Bactive%5D=true&playlist%5Btitle%5D=The%20best%20active%20playlist!
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - request_method=POST; path=/
+      X-Request-Id:
+      - c18f4abf-598f-4b03-919a-f66542c16bb7
+      X-Runtime:
+      - '0.113908'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"message":"Could not save upload: Title is already taken"}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:43:03 GMT
+- request:
+    method: post
+    uri: http://api.zype-core.com:3000/playlists?playlist%5Bactive%5D=true&playlist%5Btitle%5D=The%20best%20active%20playlist!!
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"0b8d7f60d2b3304c5a7ba2a51578985e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=POST; path=/
+      X-Request-Id:
+      - 6f0765c6-7122-4b2d-be51-afa214ec1dcc
+      X-Runtime:
+      - '0.117723'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"54908b5c4c616e20e73a0000","_keywords":["active","best","playlist"],"active":true,"created_at":"2014-12-16T14:43:24.272-05:00","description":null,"priority":null,"related_video_ids":[],"site_id":"545932274c616e2359000000","title":"The
+        best active playlist!!","updated_at":"2014-12-16T14:43:24.272-05:00","playlist_item_count":0}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:43:24 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - D1Ds5oSPvEoLM8UefkuKfg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"eb614c689868e8d0b68d2d87556c31c6"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 7319d3e4-14f3-4475-aba8-9963f6810d6e
+      X-Runtime:
+      - '0.122915'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"5490846f4c616e20e7360000","_keywords":["active","best","playlist"],"active":true,"created_at":"2014-12-16T14:13:51.394-05:00","description":null,"priority":null,"related_video_ids":[],"site_id":"545932274c616e2359000000","title":"The
+        best active playlist!","updated_at":"2014-12-16T14:13:51.394-05:00","playlist_item_count":0},{"_id":"54908b5c4c616e20e73a0000","_keywords":["active","best","playlist"],"active":true,"created_at":"2014-12-16T14:43:24.272-05:00","description":null,"priority":null,"related_video_ids":[],"site_id":"545932274c616e2359000000","title":"The
+        best active playlist!!","updated_at":"2014-12-16T14:43:24.272-05:00","playlist_item_count":0}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Tue, 16 Dec 2014 19:43:24 GMT
+recorded_with: VCR 2.9.3
