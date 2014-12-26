@@ -1,3 +1,4 @@
+require 'pry'
 module Zype
   class VideoSources < Zype::Collection
     model VideoSource
@@ -9,9 +10,9 @@ module Zype
     def find(id)
       load(service.get("/video_sources/#{id}"))
     end
-    
-    def create(attributes={})
-      load(service.post("/video_sources", video_source: attributes))
+
+    def create(source, attributes={})
+      load(service.post("/video_sources", source: source, video_source: attributes))
     end
   end
 end
