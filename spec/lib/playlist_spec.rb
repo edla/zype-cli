@@ -47,5 +47,23 @@ describe Zype, vcr: true do
     expect(@zype.playlists.all({}).count).to eq(playlist_count - 1)
   end
 
+  it 'can add video to a playlist' do
+    playlist = @zype.playlists.all({}).first
+    video = @zype.videos.all({}).first
+
+    playlist.add_videos([video._id])
+
+    expect(playlist.videos.detect{|v| v['_id'] == video._id}).to_not be nil
+  end
+
+  it 'can remove video from a playlist' do
+    playlist = @zype.playlists.all({}).first
+    video = @zype.videos.all({}).first
+
+    playlist.remove_videos([video._id])
+
+    expect(playlist.videos.detect{|v| v['_id'] == video._id}).to be nil
+  end
+
 
 end

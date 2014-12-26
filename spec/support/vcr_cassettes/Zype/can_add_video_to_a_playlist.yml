@@ -1,0 +1,651 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"61f2fcec6ad3f70f5d8ef1fba7e91da2"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - be0e13b3-678f-4b3b-a7d3-154740ad0216
+      X-Runtime:
+      - '0.189037'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549db7274c616e064a720000","_keywords":["playlist","test"],"active":true,"created_at":"2014-12-26T14:29:43.757-05:00","description":"","priority":0,"related_video_ids":[],"site_id":"545956c44c616e3436000000","title":"test
+        playlist","updated_at":"2014-12-26T14:29:43.757-05:00","playlist_item_count":0}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:32:32 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - bb9881cf-faaf-4625-863b-7182fc0ff86f
+      X-Runtime:
+      - '0.743666'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:32:33 GMT
+- request:
+    method: put
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/add_videos?video_id%5B%5D=545d47904c616e3ffc030000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"066d4180796ef42aae87a7674fb5c249"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=PUT; path=/
+      X-Request-Id:
+      - c8611e2f-af66-4ddf-81b8-f65fbeb3905d
+      X-Runtime:
+      - '0.209180'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":25,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:32:33 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"2bb4a36a9feb3b31217c451dee0046ec"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - be9e9327-58bd-43c7-8f0d-fd70a386eccc
+      X-Runtime:
+      - '0.120898'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549db7274c616e064a720000","_keywords":["playlist","test"],"active":true,"created_at":"2014-12-26T14:29:43.757-05:00","description":"","priority":0,"related_video_ids":[],"site_id":"545956c44c616e3436000000","title":"test
+        playlist","updated_at":"2014-12-26T14:29:43.757-05:00","playlist_item_count":1}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:32:44 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"2bb4a36a9feb3b31217c451dee0046ec"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - ae94bf98-3d19-426e-806d-89a321763276
+      X-Runtime:
+      - '0.105024'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549db7274c616e064a720000","_keywords":["playlist","test"],"active":true,"created_at":"2014-12-26T14:29:43.757-05:00","description":"","priority":0,"related_video_ids":[],"site_id":"545956c44c616e3436000000","title":"test
+        playlist","updated_at":"2014-12-26T14:29:43.757-05:00","playlist_item_count":1}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:33:08 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"2bb4a36a9feb3b31217c451dee0046ec"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - b5a0365d-011e-450f-948a-6e531a1dafd4
+      X-Runtime:
+      - '0.112476'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549db7274c616e064a720000","_keywords":["playlist","test"],"active":true,"created_at":"2014-12-26T14:29:43.757-05:00","description":"","priority":0,"related_video_ids":[],"site_id":"545956c44c616e3436000000","title":"test
+        playlist","updated_at":"2014-12-26T14:29:43.757-05:00","playlist_item_count":1}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:33:20 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 40c1ce9c-279a-40b2-adde-b2b23d4f7eb3
+      X-Runtime:
+      - '0.180152'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:33:27 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 54a0a8ca-959e-4dda-bf79-4c809009c526
+      X-Runtime:
+      - '0.147290'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:33:41 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 7e8d603f-5008-4e7f-9db5-cfcbcc4e002b
+      X-Runtime:
+      - '0.154692'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:34:57 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 691b399b-98d0-47c4-9e57-80af33ae3172
+      X-Runtime:
+      - '0.155965'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:35:02 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 4d70e35d-8617-4ab6-9736-5090df5a1bbd
+      X-Runtime:
+      - '0.143437'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:35:11 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - bf771ca7-3760-4bcc-abb1-61ebd6f31ed9
+      X-Runtime:
+      - '0.740759'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:35:19 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - dcb5269c-47d7-4822-8583-321b4925c660
+      X-Runtime:
+      - '0.174805'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:35:36 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/playlists/549db7274c616e064a720000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"456b009ad7d4b2b571aea97d6485def4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 8907fa44-87d0-4def-a501-24cd836e6a15
+      X-Runtime:
+      - '0.154279'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:12:26.757-05:00","video_zobjects":[],"zobject_ids":[],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:35:39 GMT
+recorded_with: VCR 2.9.3

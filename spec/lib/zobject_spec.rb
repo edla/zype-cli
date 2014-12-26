@@ -28,4 +28,26 @@ describe Zype, vcr: true do
 
     expect(first_zobject.videos.class).to eq(Zype::Videos)
   end
+
+  it 'can add a video to a zobject' do
+    zobject = @zype.zobjects.all('actor', {}).first
+    video = @zype.videos.all({}).first
+
+    zobject.add_videos('actor', [video._id])
+
+    refreshed_zobject = @zype.zobjects.all('actor', {}).first
+
+    expect(refreshed_zobject.video_ids.include?(video._id)).to be true
+  end
+
+  it 'can remove a video from a zobject' do
+    zobject = @zype.zobjects.all('actor', {}).first
+    video = @zype.videos.all({}).first
+
+    zobject.remove_videos('actor', [video._id])
+
+    refreshed_zobject = @zype.zobjects.all('actor', {}).first
+
+    expect(refreshed_zobject.video_ids.include?(video._id)).to be false
+  end
 end
