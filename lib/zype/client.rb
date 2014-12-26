@@ -98,6 +98,7 @@ module Zype
     model :subscription
     model :upload
     model :video
+    model :video_import
     model :video_source
     model :zobject_type
     model :zobject
@@ -112,6 +113,7 @@ module Zype
     collection :subscriptions
     collection :uploads
     collection :videos
+    collection :video_imports
     collection :video_sources
     collection :zobject_types
     collection :zobjects

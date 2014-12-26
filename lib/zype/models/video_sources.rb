@@ -1,4 +1,3 @@
-require 'pry'
 module Zype
   class VideoSources < Zype::Collection
     model VideoSource
