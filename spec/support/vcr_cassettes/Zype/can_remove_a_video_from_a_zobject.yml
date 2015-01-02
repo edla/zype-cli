@@ -1,0 +1,178 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/zobjects?zobject_type=actor
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"5d31cd5d372431fe47f369ab208cd14b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - e1b4a9b6-55bd-44bd-b019-cf189f9823bc
+      X-Runtime:
+      - '0.131228'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549daa3d4c616e064a700000","active":true,"created_at":"2014-12-26T13:34:37.049-05:00","description":"","friendly_title":"test-actor","keywords":[],"site_id":"545956c44c616e3436000000","title":"Test
+        Actor","updated_at":"2014-12-26T14:11:29.566-05:00","video_ids":["545d47904c616e3ffc030000"],"zobject_type_id":"549daa2b4c616e064a6e0000","zobject_type_title":"actor"}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:12:26 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"52af39cf13465715cabc9842a69e918e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - 0105d6c8-4c87-4034-91eb-ffbf2794396c
+      X-Runtime:
+      - '0.188231'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"545d47904c616e3ffc030000","active":true,"categories":[{"title":"Podcast","value":["Right
+        Reasons"]}],"country":"","created_at":"2014-11-07T17:28:32.812-05:00","data_sources":[{"_id":"545d47904c616e3ffc040000","active":false,"duration":3408,"status":"ready","youtube_id":"dJ0RXdX17iA","thumbnails":[{"_id":"5459577f4c616e345f5e0200","aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"_id":"5459577f4c616e345f5f0200","aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"_id":"5459577f4c616e345f600200","aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"_id":"5459577f4c616e345f610200","aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"_id":"5459577f4c616e345f620200","aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"description":"Juliet
+        Litman and David Jacoby discuss ''Below Deck,'' the KimYe wedding special,
+        and breakfast cocktails.\r\n\r\nVisit Grantland: http://www.Grantland.com\r\nGrantland
+        on Twitter: http://www.Twitter.com/Grantland33\r\nGrantland on Facebook: http://www.facebook.com/Grantland33\r\nThe
+        B.S. Report Podcast: http://espn.go.com/espnradio/podcast/archive?id=2864045\r\nGrantland
+        Network Podcasts: http://www.grantland.com/podcasts","duration":3408,"episode":null,"featured":false,"foreign_id":null,"keywords":[],"mature_content":false,"published_at":"2014-09-05T11:19:49.000-04:00","rating":0.0,"related_playlist_ids":[],"request_count":0,"season":null,"site_id":"545956c44c616e3436000000","status":"created","subscription_required":false,"title":"''Bachelor
+        in Paradise,'' ''Below Deck,'' and the KimYe Wedding | Right Reasons 09/04/14","updated_at":"2014-12-26T14:11:29.619-05:00","video_zobjects":[{"_id":"549daa3d4c616e064a700000","description":"","title":"Test
+        Actor","zobject_type_title":"actor"}],"zobject_ids":["549daa3d4c616e064a700000"],"thumbnails":[{"aspect_ratio":null,"height":90,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/default.jpg","width":120},{"aspect_ratio":null,"height":180,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/mqdefault.jpg","width":320},{"aspect_ratio":null,"height":360,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/hqdefault.jpg","width":480},{"aspect_ratio":null,"height":480,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/sddefault.jpg","width":640},{"aspect_ratio":null,"height":720,"name":null,"url":"https://i.ytimg.com/vi/dJ0RXdX17iA/maxresdefault.jpg","width":1280}]}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:12:26 GMT
+- request:
+    method: put
+    uri: http://api.zype-core.com:3000/zobjects/549daa3d4c616e064a700000/remove_videos?video_id%5B%5D=545d47904c616e3ffc030000&zobject_type=actor
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"f889a0aafb9db2e0013c17f4c684e69e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=PUT; path=/
+      X-Request-Id:
+      - 981d9554-eccd-40fe-81b2-6f10a263351c
+      X-Runtime:
+      - '0.148846'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":{"_id":"549daa3d4c616e064a700000","active":true,"created_at":"2014-12-26T13:34:37.049-05:00","description":"","friendly_title":"test-actor","keywords":[],"site_id":"545956c44c616e3436000000","title":"Test
+        Actor","updated_at":"2014-12-26T14:12:26.671-05:00","video_ids":[],"zobject_type_id":"549daa2b4c616e064a6e0000","zobject_type_title":"actor"}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:12:26 GMT
+- request:
+    method: get
+    uri: http://api.zype-core.com:3000/zobjects?zobject_type=actor
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - NCl-IcyAvN0WzxIDrcqIqg
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - ! '"79e13859f6f2617c77e3d215552d6091"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - cddbda68-307d-4f47-bb06-58d7c87b1478
+      X-Runtime:
+      - '0.120564'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"response":[{"_id":"549daa3d4c616e064a700000","active":true,"created_at":"2014-12-26T13:34:37.049-05:00","description":"","friendly_title":"test-actor","keywords":[],"site_id":"545956c44c616e3436000000","title":"Test
+        Actor","updated_at":"2014-12-26T14:12:26.671-05:00","video_ids":[],"zobject_type_id":"549daa2b4c616e064a6e0000","zobject_type_title":"actor"}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 26 Dec 2014 19:12:26 GMT
+recorded_with: VCR 2.9.3

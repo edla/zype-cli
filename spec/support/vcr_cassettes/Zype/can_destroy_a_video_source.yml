@@ -25,15 +25,15 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - ! '"249c2961451d594b5ce67b15ab0d7c93"'
+      - ! '"3cda75b22d9bd0b1bc007f158e4021b8"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
       - request_method=GET; path=/
       X-Request-Id:
-      - 60dd18ec-ba4c-419d-86ed-0f5b38928f61
+      - ab791fb0-db99-4fba-845f-d26f1c016210
       X-Runtime:
-      - '0.846710'
+      - '0.123813'
       Transfer-Encoding:
       - chunked
     body:
@@ -41,12 +41,13 @@ http_interactions:
       string: ! '{"response":[{"_id":"5463e4324c616e21271e0000","created_at":"2014-11-12T17:50:27.088-05:00","deleteable":true,"editable":true,"guid":"UCWPQB43yGKEum3eW0P9N_nQ","name":"HBO
         Boxing","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":"2014-11-12T17:50:27.277-05:00","site_id":"545956c44c616e3436000000","updated_at":"2014-11-12T17:51:52.451-05:00","video_count":0},{"_id":"545957134c616e0a98200000","created_at":"2014-11-04T17:45:39.698-05:00","deleteable":true,"editable":true,"guid":"UC-m-uTkiq2NPPPUiq6HftIg","name":"Grantland
         Podcasts","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":null,"site_id":"545956c44c616e3436000000","updated_at":"2014-11-04T17:46:00.345-05:00","video_count":0},{"_id":"545957e34c616e0a98220000","created_at":"2014-11-04T17:49:08.008-05:00","deleteable":true,"editable":true,"guid":"UC3XTzVzaHQEd30rQbuvCtTQ","name":"John
-        Oliver","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":null,"site_id":"545956c44c616e3436000000","updated_at":"2014-11-04T17:49:08.008-05:00","video_count":0}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+        Oliver","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":null,"site_id":"545956c44c616e3436000000","updated_at":"2014-11-04T17:49:08.008-05:00","video_count":0},{"_id":"549dbcd74c616e064a790000","created_at":"2014-12-26T14:53:59.779-05:00","deleteable":true,"editable":true,"guid":"UCwLr_DYKR8aS0k4r8bB5I5Q","name":"new
+        grantland","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":"2014-12-26T14:53:59.827-05:00","site_id":"545956c44c616e3436000000","updated_at":"2014-12-26T14:56:44.240-05:00","video_count":0}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
     http_version: 
-  recorded_at: Fri, 26 Dec 2014 19:53:57 GMT
+  recorded_at: Fri, 26 Dec 2014 19:56:51 GMT
 - request:
-    method: post
-    uri: http://api.zype-core.com:3000/video_sources?source=youtube&video_source%5Bguid%5D=UCwLr_DYKR8aS0k4r8bB5I5Q&video_source%5Bname%5D=new%20grantland
+    method: delete
+    uri: http://api.zype-core.com:3000/video_sources/549dbcd74c616e064a790000
     body:
       encoding: US-ASCII
       string: ''
@@ -57,8 +58,8 @@ http_interactions:
       - NCl-IcyAvN0WzxIDrcqIqg
   response:
     status:
-      code: 201
-      message: Created
+      code: 204
+      message: No Content
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -66,26 +67,19 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - ! '"68339ba769c6e505921419746e233ce0"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       Set-Cookie:
-      - request_method=POST; path=/
+      - request_method=DELETE; path=/
       X-Request-Id:
-      - 7a2e66be-a74e-4e8c-947b-1cae085b9027
+      - 518fd866-aad8-4448-9c9f-7ca26c9400d7
       X-Runtime:
-      - '0.560959'
-      Transfer-Encoding:
-      - chunked
+      - '0.123165'
     body:
       encoding: US-ASCII
-      string: ! '{"response":{"_id":"549dbcd74c616e064a790000","created_at":"2014-12-26T14:53:59.779-05:00","deleteable":true,"editable":true,"guid":"UCwLr_DYKR8aS0k4r8bB5I5Q","name":"new
-        grantland","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":null,"site_id":"545956c44c616e3436000000","updated_at":"2014-12-26T14:53:59.779-05:00","video_count":0}}'
+      string: ''
     http_version: 
-  recorded_at: Fri, 26 Dec 2014 19:53:59 GMT
+  recorded_at: Fri, 26 Dec 2014 19:56:51 GMT
 - request:
     method: get
     uri: http://api.zype-core.com:3000/video_sources?page=0&per_page=10
@@ -111,15 +105,15 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - ! '"f68d68579cfa6f9347a7afc34a67a4db"'
+      - ! '"249c2961451d594b5ce67b15ab0d7c93"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
       - request_method=GET; path=/
       X-Request-Id:
-      - 186e314c-60cf-4aaf-a8ad-130c5e369b9c
+      - 5d2f6fe8-2150-4542-8013-9efcae27ae3c
       X-Runtime:
-      - '0.123218'
+      - '0.126710'
       Transfer-Encoding:
       - chunked
     body:
@@ -127,8 +121,7 @@ http_interactions:
       string: ! '{"response":[{"_id":"5463e4324c616e21271e0000","created_at":"2014-11-12T17:50:27.088-05:00","deleteable":true,"editable":true,"guid":"UCWPQB43yGKEum3eW0P9N_nQ","name":"HBO
         Boxing","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":"2014-11-12T17:50:27.277-05:00","site_id":"545956c44c616e3436000000","updated_at":"2014-11-12T17:51:52.451-05:00","video_count":0},{"_id":"545957134c616e0a98200000","created_at":"2014-11-04T17:45:39.698-05:00","deleteable":true,"editable":true,"guid":"UC-m-uTkiq2NPPPUiq6HftIg","name":"Grantland
         Podcasts","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":null,"site_id":"545956c44c616e3436000000","updated_at":"2014-11-04T17:46:00.345-05:00","video_count":0},{"_id":"545957e34c616e0a98220000","created_at":"2014-11-04T17:49:08.008-05:00","deleteable":true,"editable":true,"guid":"UC3XTzVzaHQEd30rQbuvCtTQ","name":"John
-        Oliver","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":null,"site_id":"545956c44c616e3436000000","updated_at":"2014-11-04T17:49:08.008-05:00","video_count":0},{"_id":"549dbcd74c616e064a790000","created_at":"2014-12-26T14:53:59.779-05:00","deleteable":true,"editable":true,"guid":"UCwLr_DYKR8aS0k4r8bB5I5Q","name":"new
-        grantland","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":null,"site_id":"545956c44c616e3436000000","updated_at":"2014-12-26T14:53:59.779-05:00","video_count":0}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
+        Oliver","provider_id":"5429b1cb69702d2f7c1a0000","refreshed_at":null,"site_id":"545956c44c616e3436000000","updated_at":"2014-11-04T17:49:08.008-05:00","video_count":0}],"pagination":{"current":1,"previous":null,"next":null,"per_page":10,"pages":1}}'
     http_version: 
-  recorded_at: Fri, 26 Dec 2014 19:54:00 GMT
+  recorded_at: Fri, 26 Dec 2014 19:56:51 GMT
 recorded_with: VCR 2.9.3
