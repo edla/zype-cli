@@ -15,7 +15,7 @@ module Zype
     end
 
     def update(id, attributes={})
-      load(service.post("/consumers/#{id}", consumer: attributes))
+      load(service.put("/consumers/#{id}", consumer: attributes))
     end
   end
 end
