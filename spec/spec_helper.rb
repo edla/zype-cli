@@ -3,7 +3,6 @@ require 'bundler/setup'
 require 'vcr'
 require 'webmock'
 require 'httparty'
-require 'pry'
 require 'zype'
 
 RSpec.configure do |config|
