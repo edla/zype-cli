@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.zype-core.com:3000/consumers?consumer%5Bemail%5D=test@example.com
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - 10u9GeiG_eqcJWNIQdROhA
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - request_method=POST; path=/
+      X-Request-Id:
+      - 124081a0-1136-4288-83f7-434a50d92196
+      X-Runtime:
+      - '0.042960'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"Invalid or missing API key."}'
+    http_version: 
+  recorded_at: Mon, 09 Feb 2015 19:21:40 GMT
+- request:
+    method: post
+    uri: http://api.zype-core.com:3000/consumers?consumer%5Bemail%5D=test1@example.com
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Zype-Key:
+      - 10u9GeiG_eqcJWNIQdROhA
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - request_method=POST; path=/
+      X-Request-Id:
+      - c5213021-3d10-4e2f-96c6-0531d33bb9b6
+      X-Runtime:
+      - '0.043116'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"Invalid or missing API key."}'
+    http_version: 
+  recorded_at: Mon, 09 Feb 2015 19:23:59 GMT
+recorded_with: VCR 2.9.3

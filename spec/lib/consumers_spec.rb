@@ -15,12 +15,20 @@ describe Zype, vcr: true do
     expect(@zype.consumers.find(first_consumer._id).class).to eq(Zype::Consumer)
   end
 
-  it 'can create a new category' do
+  it 'can create a new consumer' do
     consumer_count = @zype.consumers.all({}).count
 
     @zype.consumers.create(email: 'test@example.com')
 
     expect(@zype.consumers.count).to eq(consumer_count + 1)
+  end
+
+  it 'can update a consumer' do
+
+    @zype.consumers.create(email: 'test1@example.com')
+    @zype.consumers.update(consumer._id, email: 'test2@example.com')
+
+    expect(consumer.email).to eq('test2@example.com')
   end
 
   it 'can favorite a video' do

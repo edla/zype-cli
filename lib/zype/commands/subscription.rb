@@ -73,7 +73,6 @@ module Zype
     no_commands do
 
       def print_subscriptions(subscriptions)
-        # binding.pry
         puts Hirb::Helpers::Table.render(subscriptions, :fields=>[:_id, :plan_id, :consumer_id, :amount, :currency, :interval, :trial_period_days, :active])
       end
     end

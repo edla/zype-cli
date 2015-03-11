@@ -7,7 +7,7 @@ module Zype
     method_option 'query', desc: 'Plan search terms',
                   aliases: 'q', type: :string
     method_option 'active', desc: 'Show active, inactive or all videos',
-                  aliases: 'a', type: :string, default: 'true', enum: ['true','false','all']                  
+                  aliases: 'a', type: :string, default: 'true', enum: ['true','false','all']
     method_option 'page', desc: 'The page of plans to return',
                   aliases: 'p', type: :numeric, default: 0
     method_option 'per_page', desc: 'The number of plans to return',
@@ -29,7 +29,6 @@ module Zype
     no_commands do
 
       def print_plans(plans)
-        # binding.pry
         puts Hirb::Helpers::Table.render(plans, :fields=>[:_id, :name, :description, :amount, :currency, :interval, :trial_period_days, :active])
       end
     end

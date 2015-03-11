@@ -26,7 +26,6 @@ module Zype
     no_commands do
 
       def print_devices(devices)
-        # binding.pry
         puts Hirb::Helpers::Table.render(devices, :fields=>[:_id, :name, :description])
       end
     end
